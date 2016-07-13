@@ -23,7 +23,7 @@ last_episode_entry = episode_parent_dir.entries.last
 if last_episode_entry.to_s[/^\./] # Is a directory
   episode_number = 1
 else
-  episode_number = last_episode_entry.to_i + 1
+  episode_number = last_episode_entry.to_s.to_i + 1
 end
 
 # Pad the name to five digits for paths.
@@ -35,12 +35,12 @@ puts "Creating directory #{episode_path}"
 episode_path.mkdir
 
 # Create a metadata file.
-template    = Liquid::Template.parse(File.read('lib/templates/blank_episode.md.liquid'))
-output_path = episode_path.join("#{padded_name}.md")
-episode_time = DateTime.now.iso8601
+template     = Liquid::Template.parse(File.read('lib/templates/blank_episode.md.liquid'), :error_mode => :strict)
+output_path  = episode_path.join("#{padded_name}.md")
+episode_date = DateTime.now.iso8601
 puts "Writing metadata file #{output_path}"
 File.open(output_path, 'w+') do |f|
-  f.write template.render('episode_number' => episode_number)
+  f.write template.render('episode_number' => episode_number, 'episode_date' => episode_date)
 end
 
 puts "Done."
