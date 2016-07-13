@@ -5,3 +5,4 @@ The website for Pincount Podcast
 * Publish script.
 * Audio file handling.
 * RSS render.
+* Config for stuff reused between templates.
