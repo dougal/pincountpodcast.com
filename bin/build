@@ -48,7 +48,7 @@ end
 
 def parse_episode(path)
   raw = File.read(path.join("#{path.basename}.md"))
-  _, raw_headers, raw_body = raw.split('---')
+  _, raw_headers, raw_body = raw.split(/^---$/)
 
   headers = parse_headers(raw_headers)
   body    = remove_leading_newlines(raw_body)
