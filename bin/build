@@ -1,0 +1,88 @@
+#!/usr/bin/env ruby
+
+require 'date'
+require 'pathname'
+
+def load_gem_lib(lib_name)
+  begin
+    require lib_name
+  rescue LoadError
+    puts "You do not have the `#{lib_name}` gem installed"
+    puts ""
+    puts "Install with: gem install #{lib_name}"
+    puts ""
+    puts "You may be required to use sudo to install"
+    exit(1)
+  end
+end
+
+load_gem_lib('liquid')
+load_gem_lib('rdiscount')
+
+class Episode < Liquid::Drop
+
+  def initialize(number, title, date, body)
+    @number, @title, @date, @body = number, title, date, body
+  end
+
+  attr_reader :number, :title
+
+  def pretty_date
+    # Zero-padded day, full month name, year with century.
+    @date.strftime("%-d %B %Y")
+  end
+
+  def rendered_body
+    RDiscount.new(@body).to_html
+  end
+
+  def to_liquid
+    self
+  end
+end
+
+def load_episodes(episode_parent_dir)
+  paths = episode_parent_dir.entries.select{|path| path.to_s[/^\d+$/] }
+  paths.map{|path| parse_episode(episode_parent_dir.join(path))}
+end
+
+def parse_episode(path)
+  raw = File.read(path.join("#{path.basename}.md"))
+  _, raw_headers, raw_body = raw.split('---')
+
+  headers = parse_headers(raw_headers)
+  body    = remove_leading_newlines(raw_body)
+  Episode.new(headers[:number], headers[:title], headers[:date], body)
+end
+
+def parse_headers(raw)
+  headers = {}
+  lines = remove_leading_newlines(raw).split("\n")
+
+  lines.each do |line|
+    key, value = line.split(/:\s+/)
+    headers[key.to_sym] = value
+  end
+
+  # Parse the date to a DateTime object.
+  headers[:date] = DateTime.parse(headers[:date])
+
+  headers
+end
+
+def remove_leading_newlines(str)
+  str.sub(/\A\n+/, '')
+end
+
+def render_index(episodes)
+  template     = Liquid::Template.parse(File.read('lib/templates/index.html.liquid'), :error_mode => :strict)
+  output_path  = 'build/index.html'
+  output       = template.render("episodes" => episodes)
+  File.open(output_path, 'w+') do |f|
+    f.write output
+  end
+end
+
+episode_parent_dir = Pathname.new('episodes')
+episodes = load_episodes(episode_parent_dir)
+render_index(episodes)

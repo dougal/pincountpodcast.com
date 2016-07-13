@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pincount Podcast</title>
+</head>
+<body>
+
+  <h1>Pincount Podcast</h1>
+
+  <p>Going deep into the tech with <a href="https://twitter.com/the_accidental">Iain Wallace</a> and <a href="https://twitter.com/douglasfshearer">Douglas Shearer</a>.</p>
+
+  {% for episode in episodes %}
+    <article id="episode_{{episode.number}}">
+      <h2>{{episode.title}}</h2>
+      <time>{{episode.pretty_date}}</time>
+      {{episode.rendered_body}}
+    </article>
+  {% endfor %}
+
+  <footer>
+  &copy; 2016 Iain Wallace and Douglas Shearer
+  </footer>
+
+</body>
+</html>
