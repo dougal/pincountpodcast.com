@@ -11,6 +11,13 @@ Some scripts require a working Ruby interpreter. User will be prompted to instal
 All other scripts are Bash.
 
 
+Setup
+-----
+
+  1. `cp config/secrets.yml.example config/secrets.yml`
+  2. Edit `config/secrets.yml` as required.
+  3. Edit `config/website.yml` as required.
+
 Adding a New Episode
 --------------------
 
@@ -51,6 +58,8 @@ Publishing
 This script will build the webpages, sync the audio files, then publish the webpages to the server.
 
 If build fails, or any audio files are missing, publish script will halt without publishing any files.
+
+Files are transferred via `scp` from the `build/` directory, to the server and directory defined in `config/secrets.yml`.
 
 TODO
 ----
