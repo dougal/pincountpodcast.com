@@ -1,7 +1,61 @@
-# PincountPodcast.com
+PincountPodcast.com
+===================
+
 The website for Pincount Podcast
 
-## TODO
+Requirements
+------------
+
+Some scripts require a working Ruby interpreter. User will be prompted to install required Rubygems if they are not available.
+
+All other scripts are Bash.
+
+
+Adding a New Episode
+--------------------
+
+Episodes are stored in the `episodes/` directory.
+
+    $ ./bin/new_episode
+
+Creates a new directory at `episodes/xxxxx` with a Markdown file for metadata at `episodes/xxxxx/xxxxx.md`.
+
+
+Building the Webpages
+---------------------
+
+Webpages are built from templates and episode metadata files. Build results are placed in `build/`.
+
+    $ ./bin/build
+
+This script is run automatically as part of the publish script.
+
+
+Syncing Audio Files
+-------------------
+
+Audio files are synced to an S3 bucket, then to the server. In this way audio files do not have to be added to the respository, or stored on a local machine after the inital upload.
+
+Audio files should be placed at episodes/xxxxx/xxxxx.mp3`. The script will warning if they are missing.
+
+    $ ./bin/sync_audio_files
+
+This script is run automatically as part of the publish script.
+
+
+Publishing
+----------
+
+    $ ./bin/publish
+
+This script will build the webpages, sync the audio files, then publish the webpages to the server.
+
+If build fails, or any audio files are missing, publish script will halt without publishing any files.
+
+TODO
+----
+
 * RSS render.
 * Nice design - http://jekyllthemes.org/themes/thinkspace/
 * HTTPS (Not letsencrypt due to itunes server issue)
+* Changed audio file handling.
