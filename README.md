@@ -14,7 +14,7 @@ All other scripts are Bash.
 Setup
 -----
 
-  1. `cp config/secrets.yml.example config/secrets.yml`
+  1. Run `$ cp config/secrets.yml.example config/secrets.yml`
   2. Edit `config/secrets.yml` as required.
   3. Edit `config/website.yml` as required.
 
