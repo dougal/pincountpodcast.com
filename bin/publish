@@ -7,8 +7,16 @@ function config {
 server_address=`config server`
 remote_directory=`config remote_directory`
 
-echo "Running build step..."
+echo "Running build script..."
 bin/build
+
+echo "Running audio sync script..."
+bin/sync_audio_files
+
+# Exit if audio sync has failed.
+if [ $? -ne 0 ]; then
+  exit 1
+fi
 
 echo "Publishing to $server_address..."
 scp -rC build/* $server_address:$remote_directory/
