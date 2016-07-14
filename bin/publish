@@ -11,6 +11,6 @@ echo "Running build step..."
 bin/build
 
 echo "Publishing to $server_address..."
-scp -rC build/* $server_address:$remote_directory
+scp -rC build/* $server_address:$remote_directory/
 
 echo "Done!"
