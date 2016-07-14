@@ -5,3 +5,4 @@ The website for Pincount Podcast
 * Audio file handling.
 * RSS render.
 * Nice design - http://jekyllthemes.org/themes/thinkspace/
+* HTTPS (Not letsencrypt due to itunes server issue)
