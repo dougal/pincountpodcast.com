@@ -35,7 +35,7 @@ puts "Creating directory #{episode_path}"
 episode_path.mkdir
 
 # Create a metadata file.
-template     = Liquid::Template.parse(File.read('lib/templates/blank_episode.md.liquid'), :error_mode => :strict)
+template     = Liquid::Template.parse(File.read('templates/blank_episode.md.liquid'), :error_mode => :strict)
 output_path  = episode_path.join("#{padded_name}.md")
 episode_date = DateTime.now.iso8601
 puts "Writing metadata file #{output_path}"

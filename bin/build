@@ -75,7 +75,7 @@ def remove_leading_newlines(str)
 end
 
 def render_index(episodes)
-  template     = Liquid::Template.parse(File.read('lib/templates/index.html.liquid'), :error_mode => :strict)
+  template     = Liquid::Template.parse(File.read('templates/index.html.liquid'), :error_mode => :strict)
   output_path  = 'build/index.html'
   output       = template.render("episodes" => episodes)
   File.open(output_path, 'w+') do |f|
