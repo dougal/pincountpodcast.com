@@ -50,8 +50,8 @@ def sync_file(path, config)
     if file_local?(path)
       copy_local_to_s3(path, config)
     else
-      puts "WARN: #{path} missing"
-      return
+      puts "ERROR: #{path} missing and not synced."
+      exit(1)
     end
   end
 
