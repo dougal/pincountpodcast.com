@@ -39,7 +39,7 @@ template     = Liquid::Template.parse(File.read('templates/blank_episode.md.liqu
 output_path  = episode_path.join("#{padded_name}.md")
 episode_date = DateTime.now.iso8601
 puts "Writing metadata file #{output_path}"
-File.open(output_path, 'w+') do |f|
+output_path.open('w+') do |f|
   f.write template.render('episode_number' => episode_number, 'episode_date' => episode_date)
 end
 
