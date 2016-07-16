@@ -22,18 +22,18 @@
 
 {% for episode in episodes %}
 <item>
-<title>{{ episode.title }}</title>
-<itunes:author>{{ config.name }}</itunes:author>
-<itunes:subtitle>TODO Deep learning, Mac speculation and GPUs </itunes:subtitle>
-<pubDate>TODOThu, 14 Jul 2016 12:00:00 GMT</pubDate>
-<link>TODO###episode shownote link here</link>
-<enclosure length="TODO15742795" type="audio/mpeg" url="TODO###mp3 link"/>
-<guid>TODO###we need to generate a GUID or it uses the link. Could just md5sum the mp3?</guid>
-<itunes:duration>TODO32:34</itunes:duration>
-<itunes:explicit>no</itunes:explicit>
-<description>
-<![CDATA[{{ episode.rendered_body }}]]>
-</description>
+  <title>{{ episode.title }}</title>
+  <itunes:author>{{ config.name }}</itunes:author>
+  <itunes:subtitle>TODO Deep learning, Mac speculation and GPUs </itunes:subtitle>
+  <pubDate>TODOThu, 14 Jul 2016 12:00:00 GMT</pubDate>
+  <link>TODO###episode shownote link here</link>
+  <enclosure length="TODO15742795" type="audio/mpeg" url="TODO###mp3 link"/>
+  <guid>TODO###we need to generate a GUID or it uses the link. Could just md5sum the mp3?</guid>
+  <itunes:duration>TODO32:34</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <description>
+    <![CDATA[{{ episode.rendered_body }}]]>
+  </description>
 </item>
 {% endfor %}
 
