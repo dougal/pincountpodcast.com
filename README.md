@@ -69,3 +69,4 @@ TODO
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Changed audio file handling.
 * Add subtitle to header fields.
+* Add image to repo.
