@@ -83,6 +83,22 @@ def render_index(episodes)
   end
 end
 
+def load_config
+  YAML.load(File.read('config/website.yml'))
+end
+
+def render_itunes_rss(episodes)
+  config = load_config
+
+  template     = Liquid::Template.parse(File.read('templates/itunes_rss.xml.liquid'), :error_mode => :strict)
+  output_path  = 'build/itunes_rss.xml'
+  output       = template.render("episodes" => episodes, "config" => config)
+  File.open(output_path, 'w+') do |f|
+    f.write output
+  end
+end
+
 episode_parent_dir = Pathname.new('episodes')
 episodes = load_episodes(episode_parent_dir)
 render_index(episodes)
+render_itunes_rss(episodes)

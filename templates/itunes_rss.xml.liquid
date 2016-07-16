@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 <channel>
-<title>Pincount</title>
-<link>http://pincountpodcast.com</link>
+<title>{{ config.name }}</title>
+<link>{{ config.default_url }}</link>
 <language>en-us</language>
-<copyright>&#x2117; &amp; &#xA9; 2016 Iain Wallace, Douglas Shearer</copyright>
-<itunes:subtitle>No tech too trivial.</itunes:subtitle>
-<itunes:author>Iain Wallace and Douglas Shearer</itunes:author>
-<itunes:summary>Pincount is a tech podcast not afraid of the details. We're experts, not  just users, we're computer scientists and developers. Join us for half an hour each week to get into the detail on new tech and speculate about what might be next.</itunes:summary>
-<description>Pincount is a tech podcast not afraid of the details. We're experts, not  just users, we're computer scientists and developers. Join us for half an hour each week to get into the detail on new tech and speculate about what might be next.</description>
+<copyright>{{ config.copyright }}</copyright>
+<itunes:subtitle>{{ config.subtitle }}</itunes:subtitle>
+<itunes:author>{{ config.authors }}</itunes:author>
+<itunes:summary>{{ config.description }}</itunes:summary>
+<description>{{ config.description }}</description>
 <itunes:owner>
-    <itunes:name>###private tag, should match connect###</itunes:name>
-    <itunes:email>###</itunes:email>
+    <itunes:name>TODO###private tag, should match connect###</itunes:name>
+    <itunes:email>TODO###</itunes:email>
 </itunes:owner>
-<itunes:image href="###link to pincount_3k.jpg"/>
-<itunes:category text="Technology">
-  <itunes:category text="Tech News"/>
+<itunes:image href="TODO###link to pincount_3k.jpg"/>
+<itunes:category text="{{ config.itunes_category }}">
+  <itunes:category text="{{ config.itunes_subcategory }}"/>
 </itunes:category>
 <itunes:explicit>no</itunes:explicit>
-<itunes:keywords>tech,technology,gadgets,geek,apple,mac,iphone,ipad,ios,development,software,gpu,pc,computer,science</itunes:keywords>
+<itunes:keywords>{{ config.keywords }}</itunes:keywords>
 
+{% for episode in episodes %}
 <item>
-<title>1: Pincount 0x01</title>
-<itunes:author>Pincount</itunes:author>
-<itunes:subtitle>Deep learning, Mac speculation and GPUs </itunes:subtitle>
-<pubDate>Thu, 14 Jul 2016 12:00:00 GMT</pubDate>
-<link>###episode shownote link here</link>
-<enclosure length="15742795" type="audio/mpeg" url="###mp3 link"/>
-<guid>###we need to generate a GUID or it uses the link. Could just md5sum the mp3?</guid>
-<itunes:duration>32:34</itunes:duration>
+<title>{{ episode.title }}</title>
+<itunes:author>{{ config.name }}</itunes:author>
+<itunes:subtitle>TODO Deep learning, Mac speculation and GPUs </itunes:subtitle>
+<pubDate>TODOThu, 14 Jul 2016 12:00:00 GMT</pubDate>
+<link>TODO###episode shownote link here</link>
+<enclosure length="TODO15742795" type="audio/mpeg" url="TODO###mp3 link"/>
+<guid>TODO###we need to generate a GUID or it uses the link. Could just md5sum the mp3?</guid>
+<itunes:duration>TODO32:34</itunes:duration>
 <itunes:explicit>no</itunes:explicit>
 <description>
-###shownotes go here. some waffle about CDATA on the apple guidelines I don't understand
+<![CDATA[{{ episode.rendered_body }}]]>
 </description>
 </item>
+{% endfor %}
 
 </channel>
 </rss>
