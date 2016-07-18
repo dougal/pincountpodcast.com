@@ -25,11 +25,11 @@ class Episode < Liquid::Drop
   def initialize(headers, body)
     @body = body
 
-    @number, @title, @subtitle, @date =
-      headers.values_at(:number, :title, :subtitle, :date)
+    @number, @title, @subtitle, @date, @guid =
+      headers.values_at(:number, :title, :subtitle, :date, :guid)
   end
 
-  attr_reader :number, :title, :subtitle
+  attr_reader :number, :title, :subtitle, :guid
 
   def pretty_date
     # Zero-padded day, full month name, year with century.

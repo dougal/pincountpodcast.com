@@ -2,6 +2,7 @@
 
 require 'date'
 require 'pathname'
+require 'digest'
 
 begin
   require 'liquid'
@@ -38,9 +39,13 @@ episode_path.mkdir
 template     = Liquid::Template.parse(File.read('templates/blank_episode.md.liquid'), :error_mode => :strict)
 output_path  = episode_path.join("#{padded_name}.md")
 episode_date = DateTime.now.iso8601
+guid         = Digest::SHA256.hexdigest "#{episode_date}#{episode_number}"
+
 puts "Writing metadata file #{output_path}"
 output_path.open('w+') do |f|
-  f.write template.render('episode_number' => episode_number, 'episode_date' => episode_date)
+  f.write template.render('episode_number' => episode_number,
+                          'episode_date' => episode_date,
+                          'episode_guid' => guid)
 end
 
 puts "Done."
