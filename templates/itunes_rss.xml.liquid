@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 <channel>
 <title>{{ config.name }}</title>
-<link>{{ config.default_url }}</link>
+<link>{{ config.domain }}</link>
 <language>en-us</language>
 <copyright>{{ config.copyright }}</copyright>
 <itunes:subtitle>{{ config.subtitle }}</itunes:subtitle>
@@ -27,7 +27,7 @@
   <itunes:subtitle>{{ episode.subtitle }}</itunes:subtitle>
   <pubDate>{{ episode.itunes_date }}</pubDate>
   <link>TODO###episode shownote link here</link>
-  <enclosure length="{{episode.length}}" type="audio/mpeg" url="{{ config.default_url }}{{episode.mp3_path}}"/>
+  <enclosure length="{{episode.length}}" type="audio/mpeg" url="{{ config.domain }}{{episode.mp3_path}}"/>
   <guid>{{ episode.guid }}</guid>
   <itunes:duration>{{ episode.duration }}</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
