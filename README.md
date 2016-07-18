@@ -75,3 +75,4 @@ TODO
 * Consider mtime query arguments on mp3 file URLs.
 * Consider mtime query arguments on asset URLs.
 * .htaccess to remove .html from URLs.
+* Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
