@@ -76,9 +76,3 @@ TODO
 * .htaccess to remove .html from URLs.
 * Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
 * Replace SCP with Rsync for publish step.
-* Implement RSS namespaces:
-    * [N/A] xmlns:content="http://purl.org/rss/1.0/modules/content/"
-    * [N/A] xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-    * [X] xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-    * [N/A] xmlns:dc="http://purl.org/dc/elements/1.1/"
-    * [X] xmlns:media="http://www.rssboard.org/media-rss"
