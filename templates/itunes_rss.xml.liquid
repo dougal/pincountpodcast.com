@@ -27,7 +27,7 @@
   <itunes:subtitle>{{ episode.subtitle }}</itunes:subtitle>
   <pubDate>{{ episode.itunes_date }}</pubDate>
   <link>TODO###episode shownote link here</link>
-  <enclosure length="{{episode.length}}" type="audio/mpeg" url="TODO###mp3 link"/>
+  <enclosure length="{{episode.length}}" type="audio/mpeg" url="{{ config.default_url }}{{episode.mp3_path}}"/>
   <guid>{{ episode.guid }}</guid>
   <itunes:duration>{{ episode.duration }}</itunes:duration>
   <itunes:explicit>no</itunes:explicit>

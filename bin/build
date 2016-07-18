@@ -48,6 +48,16 @@ class Episode < Liquid::Drop
   def to_liquid
     self
   end
+
+  def mp3_path
+    "/audio/#{padded_episode_number}.mp3"
+  end
+
+  private
+
+  def padded_episode_number
+    "%05d" % @number
+  end
 end
 
 def load_episodes(episode_parent_dir)
