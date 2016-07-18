@@ -10,6 +10,8 @@ Some scripts require a working Ruby interpreter. User will be prompted to instal
 
 All other scripts are Bash.
 
+Audio sync script requires a working install of [FFMPEG](https://ffmpeg.org) so as to determine the episode length.
+
 
 Setup
 -----

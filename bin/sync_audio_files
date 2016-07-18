@@ -82,6 +82,39 @@ def copy_local_to_s3(path, config)
 
   s3 = Aws::S3::Client.new
   s3.put_object(bucket: config['s3_bucket'], key: path.basename.to_s, body: path.open)
+
+  puts "Updating episode metadata..."
+  update_local_metadata(path)
+end
+
+def update_local_metadata(mp3_path)
+  length   = mp3_path.size
+  duration = extract_duration(mp3_path)
+
+  metadata_path = mp3_path.sub(/mp3$/, 'md')
+
+  contents = metadata_path.read
+
+  contents.sub!(/^audio_duration:[^\n]*$/, "audio_duration: #{duration}")
+  contents.sub!(/^audio_file_size:[^\n]*$/, "audio_file_size: #{length}")
+
+  metadata_path.open('w+') do |f|
+    f.write contents
+  end
+end
+
+def extract_duration(mp3_path)
+  check_for_ffprobe
+  `ffprobe -i #{mp3_path} 2>&1`[/Duration:\s(\d\d:\d\d:\d\d)/]
+  $1
+end
+
+def check_for_ffprobe
+  if `which ffprobe` == ''
+    puts "FFProbe not available"
+    puts "Please install FFMPEG and try again"
+    exit(1)
+  end
 end
 
 def file_on_server?(filename, config)
