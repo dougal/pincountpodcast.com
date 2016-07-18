@@ -66,7 +66,6 @@ Files are transferred via `scp` from the `build/` directory, to the server and d
 TODO
 ----
 
-* RSS render.
 * Nice design - http://jekyllthemes.org/themes/thinkspace/
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Handling of new version of audio file.
@@ -77,3 +76,9 @@ TODO
 * .htaccess to remove .html from URLs.
 * Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
 * Replace SCP with Rsync for publish step.
+* Implement RSS namespaces:
+    * [ ] xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    * [ ] xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    * [X] xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+    * [ ] xmlns:dc="http://purl.org/dc/elements/1.1/"
+    * [ ] xmlns:media="http://www.rssboard.org/media-rss"
