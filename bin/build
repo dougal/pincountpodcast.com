@@ -21,11 +21,14 @@ load_gem_lib('rdiscount')
 
 class Episode < Liquid::Drop
 
-  def initialize(number, title, date, body)
-    @number, @title, @date, @body = number, title, date, body
+  def initialize(headers, body)
+    @body = body
+
+    @number, @title, @subtitle, @date =
+      headers.values_at(:number, :title, :subtitle, :date)
   end
 
-  attr_reader :number, :title
+  attr_reader :number, :title, :subtitle
 
   def pretty_date
     # Zero-padded day, full month name, year with century.
@@ -57,7 +60,7 @@ def parse_episode(path)
 
   headers = parse_headers(raw_headers)
   body    = remove_leading_newlines(raw_body)
-  Episode.new(headers[:number], headers[:title], headers[:date], body)
+  Episode.new(headers, body)
 end
 
 def parse_headers(raw)

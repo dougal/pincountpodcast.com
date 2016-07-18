@@ -12,6 +12,7 @@
   {% for episode in episodes %}
     <article id="episode_{{episode.number}}">
       <h2>{{episode.title}}</h2>
+      <h3>{{episode.subtitle}}</h3>
       <time>{{episode.pretty_date}}</time>
       {{episode.rendered_body}}
     </article>
