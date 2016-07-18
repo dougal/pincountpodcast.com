@@ -36,7 +36,7 @@ class Episode < Liquid::Drop
     @date.strftime("%-d %B %Y")
   end
 
-  def itunes_date
+  def date
     # Thu, 14 Jul 2016 12:00:00 GMT
     @date.strftime("%a, %-d %b %Y %H:%M:%S %Z")
   end
@@ -120,12 +120,12 @@ def load_secrets
   YAML.load(File.read('config/secrets.yml'))
 end
 
-def render_itunes_rss(episodes)
+def render_rss(episodes)
   config  = load_config
   secrets = load_secrets
 
-  template     = Liquid::Template.parse(File.read('templates/itunes_rss.xml.liquid'), :error_mode => :strict)
-  output_path  = 'build/itunes_rss.xml'
+  template     = Liquid::Template.parse(File.read('templates/rss.xml.liquid'), :error_mode => :strict)
+  output_path  = 'build/rss.xml'
   output       = template.render('episodes' => episodes, 'config' => config, 'secrets' => secrets)
   File.open(output_path, 'w+') do |f|
     f.write output
@@ -140,5 +140,5 @@ end
 episode_parent_dir = Pathname.new('episodes')
 episodes = load_episodes(episode_parent_dir)
 render_index(episodes)
-render_itunes_rss(episodes)
+render_rss(episodes)
 copy_assets
