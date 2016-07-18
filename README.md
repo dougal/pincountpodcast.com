@@ -81,4 +81,4 @@ TODO
     * [ ] xmlns:wfw="http://wellformedweb.org/CommentAPI/"
     * [X] xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
     * [ ] xmlns:dc="http://purl.org/dc/elements/1.1/"
-    * [ ] xmlns:media="http://www.rssboard.org/media-rss"
+    * [X] xmlns:media="http://www.rssboard.org/media-rss"
