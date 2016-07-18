@@ -96,12 +96,17 @@ def load_config
   YAML.load(File.read('config/website.yml'))
 end
 
+def load_secrets
+  YAML.load(File.read('config/secrets.yml'))
+end
+
 def render_itunes_rss(episodes)
-  config = load_config
+  config  = load_config
+  secrets = load_secrets
 
   template     = Liquid::Template.parse(File.read('templates/itunes_rss.xml.liquid'), :error_mode => :strict)
   output_path  = 'build/itunes_rss.xml'
-  output       = template.render("episodes" => episodes, "config" => config)
+  output       = template.render('episodes' => episodes, 'config' => config, 'secrets' => secrets)
   File.open(output_path, 'w+') do |f|
     f.write output
   end

@@ -10,8 +10,8 @@
 <itunes:summary>{{ config.description }}</itunes:summary>
 <description>{{ config.description }}</description>
 <itunes:owner>
-    <itunes:name>TODO###private tag, should match connect###</itunes:name>
-    <itunes:email>TODO###</itunes:email>
+    <itunes:name>{{ secrets.itunes_name }}</itunes:name>
+    <itunes:email>{{ secrets.itunes_email }}</itunes:email>
 </itunes:owner>
 <itunes:image href="/assets/images/pincount_logo_1400x1400.jpg"/>
 <itunes:category text="{{ config.itunes_category }}">
