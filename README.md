@@ -68,3 +68,5 @@ TODO
 * Nice design - http://jekyllthemes.org/themes/thinkspace/
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Handling of new version of audio file.
+* Support page.
+* Per-episode page.
