@@ -57,6 +57,10 @@ class Episode < Liquid::Drop
     "/episodes/#{padded_episode_number}.html"
   end
 
+  def length_megabytes
+    (@length.to_f / 1024**2).ceil
+  end
+
   private
 
   def padded_episode_number
