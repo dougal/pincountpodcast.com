@@ -72,3 +72,5 @@ TODO
 * Handling of new version of audio file.
 * Support page.
 * Per-episode page.
+* Consider mtime query arguments on mp3 file URLs.
+* Consider mtime query arguments on asset URLs.
