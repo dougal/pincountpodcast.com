@@ -28,7 +28,7 @@
   <pubDate>{{ episode.itunes_date }}</pubDate>
   <link>{{ config.domain }}{{ episode.episode_path }}</link>
   <enclosure length="{{episode.length}}" type="audio/mpeg" url="{{ config.domain }}{{episode.mp3_path}}"/>
-  <guid>{{ episode.guid }}</guid>
+  <guid isPermaLink="false">{{ episode.guid }}</guid>
   <itunes:duration>{{ episode.duration }}</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
   <description>
