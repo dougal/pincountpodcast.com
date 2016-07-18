@@ -2,6 +2,7 @@
 
 require 'date'
 require 'pathname'
+require 'fileutils'
 
 def load_gem_lib(lib_name)
   begin
@@ -106,7 +107,13 @@ def render_itunes_rss(episodes)
   end
 end
 
+def copy_assets
+  FileUtils.rm_rf('build/assets')
+  FileUtils.cp_r('assets', 'build/assets')
+end
+
 episode_parent_dir = Pathname.new('episodes')
 episodes = load_episodes(episode_parent_dir)
 render_index(episodes)
 render_itunes_rss(episodes)
+copy_assets
