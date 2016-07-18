@@ -7,18 +7,18 @@ function config {
 server_address=`config server`
 remote_directory=`config remote_directory`
 
-echo "Running build script..."
-bin/build
-
-# Exit if build has failed.
-if [ $? -ne 0 ]; then
-  exit 1
-fi
-
 echo "Running audio sync script..."
 bin/sync_audio_files
 
 # Exit if audio sync has failed.
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+echo "Running build script..."
+bin/build
+
+# Exit if build has failed.
 if [ $? -ne 0 ]; then
   exit 1
 fi
