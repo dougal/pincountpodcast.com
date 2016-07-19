@@ -15,7 +15,7 @@ if [ "$which_lame" = "" ]; then
 fi
 
 if [ "$#" -ne 4 ]; then
-    echo "USAGE: ./encode-podcast.sh input_aiff episode_number title summary"
+    echo "USAGE: ./encode-podcast input_aiff episode_number title summary"
     exit 1
 fi
 
