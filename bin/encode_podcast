@@ -28,7 +28,7 @@ EPISODE_SUMMARY=$4
 INPUT_WAV_FILE=$1
 
 # Artwork: ideally 1400x1400, but less than 128 KB to maximize compatibility
-ARTWORK_JPG_FILENAME="${HOME}/Dropbox/Pincount/mp3Artwork.jpg"
+ARTWORK_JPG_FILENAME="assets/images/pincount_logo_1400x1400.jpg"
 
 # Output quality (kbps): 96 or 64 recommended
 MP3_KBPS=64
