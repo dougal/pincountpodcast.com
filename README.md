@@ -77,3 +77,4 @@ TODO
 * Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
 * Replace SCP with Rsync for publish step.
 * Add lastBuildDate to RSS feed. (and other pages?)
+* OG, social stuff, etc. https://github.com/heiswayi/thinkspace/blob/master/_includes/head.html

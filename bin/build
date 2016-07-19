@@ -101,7 +101,17 @@ def remove_leading_newlines(str)
   str.sub(/\A\n+/, '')
 end
 
-def render_template(filename, context)
+def render_template_in_layout(filename, context)
+  layout_context = {}
+  layout_context[:content]         = render_template("index.html", context)
+  layout_context[:head_content]    = render_template("_head.html")
+  layout_context[:header_content]  = render_template("_header.html")
+  layout_context[:footer_content]  = render_template("_footer.html")
+
+  with_layout = render_template("layout.html", layout_context)
+end
+
+def render_template(filename, context={})
   template     = Liquid::Template.parse(File.read("templates/#{filename}.liquid"), :error_mode => :strict)
 
   # Turn any non-string keys into string keys.
@@ -131,7 +141,7 @@ def load_secrets
 end
 
 def render_index(episodes)
-  content = render_template("index.html", episodes: episodes)
+  content = render_template_in_layout("index.html", episodes: episodes)
 
   write_file('index.html', content)
 end
