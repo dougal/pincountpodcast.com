@@ -4,7 +4,7 @@
 # Requires lame
 # With Homebrew on Mac OS X: brew install lame
 
-which_lame=`which lame2`
+which_lame=`which lame`
 if [ "$which_lame" = "" ]; then
     echo "You do not have the Lame installed"
     echo ""
