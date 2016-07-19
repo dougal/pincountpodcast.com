@@ -61,8 +61,6 @@ class Episode < Liquid::Drop
     (@length.to_f / 1024**2).ceil
   end
 
-  private
-
   def padded_episode_number
     "%05d" % @number
   end
@@ -142,8 +140,14 @@ end
 
 def render_episodes(episodes)
   content = render_template_in_layout("episodes.html", episodes: episodes)
-
   write_file('episodes.html', content)
+
+  FileUtils.mkdir_p('build/episodes')
+
+  episodes.each do |episode|
+    content = render_template_in_layout("episode.html", episode: episode)
+    write_file("episodes/#{episode.padded_episode_number}.html", content)
+  end
 end
 
 def render_index(latest_episode)

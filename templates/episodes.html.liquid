@@ -6,7 +6,7 @@
   <article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
       <p class="post-meta"><time itemprop="datePublished">{{ episode.pretty_date }}</time></p>
-      <h2 class="post-title" itemprop="name headline">{{ episode.title }}</h2>
+      <h2 class="post-title" itemprop="name headline"><a href="/episodes/{{ episode.padded_episode_number }}.html">{{ episode.title }}</a></h2>
       <h3>{{episode.subtitle}}</h3>
     </header>
     <div class="post-content" itemprop="articleBody">
