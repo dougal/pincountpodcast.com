@@ -103,7 +103,7 @@ end
 
 def render_template_in_layout(filename, context)
   layout_context = {}
-  layout_context[:content]         = render_template("index.html", context)
+  layout_context[:content]         = render_template(filename, context)
   layout_context[:head_content]    = render_template("_head.html")
   layout_context[:header_content]  = render_template("_header.html")
   layout_context[:footer_content]  = render_template("_footer.html")
@@ -140,8 +140,14 @@ def load_secrets
   YAML.load(File.read('config/secrets.yml'))
 end
 
-def render_index(episodes)
-  content = render_template_in_layout("index.html", episodes: episodes)
+def render_episodes(episodes)
+  content = render_template_in_layout("episodes.html", episodes: episodes)
+
+  write_file('episodes.html', content)
+end
+
+def render_index(latest_episode)
+  content = render_template_in_layout("index.html", latest_episode: latest_episode)
 
   write_file('index.html', content)
 end
@@ -158,7 +164,9 @@ def copy_assets
 end
 
 episode_parent_dir = Pathname.new('episodes')
-episodes = load_episodes(episode_parent_dir)
-render_index(episodes)
+episodes = load_episodes(episode_parent_dir).reverse # Newest first.
+
+render_index(episodes.first)
+render_episodes(episodes)
 render_rss(episodes)
 copy_assets
