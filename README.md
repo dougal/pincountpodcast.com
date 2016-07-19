@@ -66,7 +66,6 @@ Files are transferred via `scp` from the `build/` directory, to the server and d
 TODO
 ----
 
-* Nice design - http://jekyllthemes.org/themes/thinkspace/
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Handling of new version of audio file.
 * Support page.
