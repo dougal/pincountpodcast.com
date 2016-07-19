@@ -101,14 +101,24 @@ def remove_leading_newlines(str)
   str.sub(/\A\n+/, '')
 end
 
-def render_index(episodes)
-  config  = load_config
+def render_template(filename, context)
+  template     = Liquid::Template.parse(File.read("templates/#{filename}.liquid"), :error_mode => :strict)
 
-  template     = Liquid::Template.parse(File.read('templates/index.html.liquid'), :error_mode => :strict)
-  output_path  = 'build/index.html'
-  output       = template.render("episodes" => episodes, 'config' => config)
-  File.open(output_path, 'w+') do |f|
-    f.write output
+  # Turn any non-string keys into string keys.
+  stringified_context = {}
+  context.each do |key, value|
+    stringified_context[key.to_s] = value
+  end
+
+  # Make sure every template has access to config.
+  stringified_context['config'] = load_config
+
+  template.render!(stringified_context,  { strict_variables: true })
+end
+
+def write_file(filename, content)
+  File.open("build/#{filename}", 'w+') do |f|
+    f.write content
   end
 end
 
@@ -120,16 +130,16 @@ def load_secrets
   YAML.load(File.read('config/secrets.yml'))
 end
 
-def render_rss(episodes)
-  config  = load_config
-  secrets = load_secrets
+def render_index(episodes)
+  content = render_template("index.html", episodes: episodes)
 
-  template     = Liquid::Template.parse(File.read('templates/rss.xml.liquid'), :error_mode => :strict)
-  output_path  = 'build/rss.xml'
-  output       = template.render('episodes' => episodes, 'config' => config, 'secrets' => secrets)
-  File.open(output_path, 'w+') do |f|
-    f.write output
-  end
+  write_file('index.html', content)
+end
+
+def render_rss(episodes)
+  content = render_template("rss.xml", episodes: episodes, secrets: load_secrets)
+
+  write_file('rss.xml', content)
 end
 
 def copy_assets
