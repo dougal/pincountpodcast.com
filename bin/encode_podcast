@@ -4,8 +4,8 @@
 # Requires lame
 # With Homebrew on Mac OS X: brew install lame
 
-which_lame=`which lame`
-if [ "$which_lame" = "" ]; then
+WHICH_LAME=`which lame`
+if [ "$WHICH_LAME" = "" ]; then
     echo "You do not have the Lame installed"
     echo ""
     echo "With Homebrew on Mac OS X: brew install lame"
@@ -35,4 +35,11 @@ MP3_KBPS=64
 
 lame --noreplaygain --cbr -h -b $MP3_KBPS --resample 44.1 --tt "$EPISODE_NUMBER: $EPISODE_TITLE" --tc "$EPISODE_SUMMARY" --ta "$SHOW_AUTHOR" --tl "$SHOW_AUTHOR" --ty `date '+%Y'` --ti "$ARTWORK_JPG_FILENAME" --add-id3v2 "$INPUT_WAV_FILE" "${INPUT_WAV_FILE%%.aiff}.mp3"
 
-say "encode complete"
+MESSAGE="encode complete"
+
+WHICH_SAY=`which say`
+if [ "$WHICH_SAY" != "" ]; then
+  say $MESSAGE
+fi
+
+echo $MESSAGE
