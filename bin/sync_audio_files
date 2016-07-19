@@ -139,8 +139,9 @@ def copy_s3_to_server(filename, config)
     }
   )
 
-  remote_path = "#{config['remote_directory']}/audio/#{filename}"
-  `ssh #{config['server']} "curl '#{url}' > #{remote_path}"`
+  remote_directory = "#{config['remote_directory']}/audio"
+  remote_path = "#{remote_directory}/#{filename}"
+  `ssh #{config['server']} "mkdir -p #{remote_directory} && curl '#{url}' > #{remote_path}"`
 end
 
 config = load_config('config/secrets.yml')
