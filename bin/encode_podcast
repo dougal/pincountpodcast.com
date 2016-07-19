@@ -4,6 +4,16 @@
 # Requires lame
 # With Homebrew on Mac OS X: brew install lame
 
+which_lame=`which lame2`
+if [ "$which_lame" = "" ]; then
+    echo "You do not have the Lame installed"
+    echo ""
+    echo "With Homebrew on Mac OS X: brew install lame"
+    echo ""
+    echo "With Apt on Ubuntu: apt install lame"
+    exit 1
+fi
+
 if [ "$#" -ne 4 ]; then
     echo "USAGE: ./encode-podcast.sh input_aiff episode_number title summary"
     exit 1
