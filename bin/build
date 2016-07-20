@@ -100,13 +100,18 @@ def remove_leading_newlines(str)
 end
 
 def render_template_in_layout(filename, context)
+  content = render_template(filename, context)
+  render_content_in_layout(content)
+end
+
+def render_content_in_layout(content)
   layout_context = {}
-  layout_context[:content]         = render_template(filename, context)
+  layout_context[:content]         = content
   layout_context[:head_content]    = render_template("_head.html")
   layout_context[:header_content]  = render_template("_header.html")
   layout_context[:footer_content]  = render_template("_footer.html")
 
-  with_layout = render_template("layout.html", layout_context)
+  render_template("layout.html", layout_context)
 end
 
 def render_template(filename, context={})
@@ -139,19 +144,30 @@ def load_secrets
 end
 
 def render_episodes(episodes)
-  content = render_template_in_layout("episodes.html", episodes: episodes)
+  # Render each episode and store in a hash with their corresponding episode
+  # numbers
+  rendered_episodes = episodes.inject({}) { |hash, episode|
+    hash[episode.padded_episode_number] = render_template("episode.html", episode: episode)
+    hash
+  }
+
+  # Render and write the episodes page.
+  content = render_template_in_layout("episodes.html", rendered_episodes: rendered_episodes.values)
   write_file('episodes.html', content)
 
+  # Make sure the episodes directory exists.
   FileUtils.mkdir_p('build/episodes')
 
-  episodes.each do |episode|
-    content = render_template_in_layout("episode.html", episode: episode)
-    write_file("episodes/#{episode.padded_episode_number}.html", content)
+  # Render each individual episode page.
+  rendered_episodes.each do |episode_number, rendered_episode|
+    content = render_content_in_layout(rendered_episode)
+    write_file("episodes/#{episode_number}.html", content)
   end
 end
 
 def render_index(latest_episode)
-  content = render_template_in_layout("index.html", latest_episode: latest_episode)
+  rendered_episode = render_template("episode.html", episode: latest_episode)
+  content = render_template_in_layout("index.html", rendered_episode: rendered_episode)
 
   write_file('index.html', content)
 end

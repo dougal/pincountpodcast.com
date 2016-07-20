@@ -4,14 +4,4 @@
   </div>
 </section>
 
-<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <p class="post-meta"><time itemprop="datePublished">{{ latest_episode.pretty_date }}</time></p>
-    <h2 class="post-title" itemprop="name headline"><a href="/episodes/{{ latest_episode.padded_episode_number }}.html">{{ latest_episode.title }}</a></h2>
-    <h3>{{latest_episode.subtitle}}</h3>
-  </header>
-  <div class="post-content" itemprop="articleBody">
-    {{latest_episode.rendered_body}}
-    <p><a href="{{latest_episode.mp3_path}}">Download MP3 ({{latest_episode.length_megabytes}}MB)</a></p>
-  </div>
-</article>
+{{ rendered_episode }}
