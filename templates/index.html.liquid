@@ -4,4 +4,6 @@
   </div>
 </section>
 
-{{ rendered_episode }}
+{% for rendered_episode in rendered_episodes %}
+  {{ rendered_episode }}
+{% endfor %}

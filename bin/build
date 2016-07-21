@@ -165,9 +165,16 @@ def render_episodes(episodes)
   end
 end
 
-def render_index(latest_episode)
-  rendered_episode = render_template("episode.html", episode: latest_episode)
-  content = render_template_in_layout("index.html", rendered_episode: rendered_episode)
+def render_index(episodes)
+  # Render each episode and store in a hash with their corresponding episode
+  # numbers
+  rendered_episodes = episodes.inject({}) { |hash, episode|
+    hash[episode.padded_episode_number] = render_template("episode.html", episode: episode)
+    hash
+  }
+
+  # Render and write the episodes page.
+  content = render_template_in_layout("index.html", rendered_episodes: rendered_episodes.values)
 
   write_file('index.html', content)
 end
@@ -204,7 +211,7 @@ end
 episode_parent_dir = Pathname.new('episodes')
 episodes = load_episodes(episode_parent_dir).reverse # Newest first.
 
-render_index(episodes.first)
+render_index(episodes)
 render_episodes(episodes)
 render_rss(episodes)
 render_pages
