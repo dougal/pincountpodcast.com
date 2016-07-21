@@ -4,8 +4,18 @@
 # Requires lame
 # With Homebrew on Mac OS X: brew install lame
 
+WHICH_LAME=`which lame`
+if [ "$WHICH_LAME" = "" ]; then
+    echo "You do not have the Lame installed"
+    echo ""
+    echo "With Homebrew on Mac OS X: brew install lame"
+    echo ""
+    echo "With Apt on Ubuntu: apt install lame"
+    exit 1
+fi
+
 if [ "$#" -ne 4 ]; then
-    echo "USAGE: ./encode-podcast.sh input_aiff episode_number title summary"
+    echo "USAGE: ./bin/encode_podcast input_aiff episode_number title summary"
     exit 1
 fi
 
@@ -18,11 +28,18 @@ EPISODE_SUMMARY=$4
 INPUT_WAV_FILE=$1
 
 # Artwork: ideally 1400x1400, but less than 128 KB to maximize compatibility
-ARTWORK_JPG_FILENAME="${HOME}/Dropbox/Pincount/mp3Artwork.jpg"
+ARTWORK_JPG_FILENAME="assets/images/pincount_logo_1400x1400.jpg"
 
 # Output quality (kbps): 96 or 64 recommended
 MP3_KBPS=96
 
 lame --noreplaygain --cbr -h -b $MP3_KBPS --resample 44.1 --tt "$EPISODE_NUMBER: $EPISODE_TITLE" --tc "$EPISODE_SUMMARY" --ta "$SHOW_AUTHOR" --tl "$SHOW_AUTHOR" --ty `date '+%Y'` --ti "$ARTWORK_JPG_FILENAME" --add-id3v2 "$INPUT_WAV_FILE" "${INPUT_WAV_FILE%%.aiff}.mp3"
 
-say "encode complete"
+MESSAGE="encode complete"
+
+WHICH_SAY=`which say`
+if [ "$WHICH_SAY" != "" ]; then
+  say $MESSAGE
+fi
+
+echo $MESSAGE

@@ -63,17 +63,20 @@ If build fails, or any audio files are missing, publish script will halt without
 
 Files are transferred via `scp` from the `build/` directory, to the server and directory defined in `config/secrets.yml`.
 
+
 TODO
 ----
 
-* Nice design - http://jekyllthemes.org/themes/thinkspace/
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Handling of new version of audio file.
 * Support page.
-* Per-episode page.
 * Consider mtime query arguments on mp3 file URLs.
 * Consider mtime query arguments on asset URLs.
 * .htaccess to remove .html from URLs.
 * Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
-* Replace SCP with Rsync for publish step.
 * Add lastBuildDate to RSS feed. (and other pages?)
+* OG, social stuff, etc. https://github.com/heiswayi/thinkspace/blob/master/_includes/head.html
+* Share buttons
+* In-browser player
+* Twitter card?
+

@@ -61,8 +61,6 @@ class Episode < Liquid::Drop
     (@length.to_f / 1024**2).ceil
   end
 
-  private
-
   def padded_episode_number
     "%05d" % @number
   end
@@ -101,14 +99,39 @@ def remove_leading_newlines(str)
   str.sub(/\A\n+/, '')
 end
 
-def render_index(episodes)
-  config  = load_config
+def render_template_in_layout(filename, context)
+  content = render_template(filename, context)
+  render_content_in_layout(content)
+end
 
-  template     = Liquid::Template.parse(File.read('templates/index.html.liquid'), :error_mode => :strict)
-  output_path  = 'build/index.html'
-  output       = template.render("episodes" => episodes, 'config' => config)
-  File.open(output_path, 'w+') do |f|
-    f.write output
+def render_content_in_layout(content)
+  layout_context = {}
+  layout_context[:content]         = content
+  layout_context[:head_content]    = render_template("_head.html")
+  layout_context[:header_content]  = render_template("_header.html")
+  layout_context[:footer_content]  = render_template("_footer.html")
+
+  render_template("layout.html", layout_context)
+end
+
+def render_template(filename, context={})
+  template     = Liquid::Template.parse(File.read("templates/#{filename}.liquid"), :error_mode => :strict)
+
+  # Turn any non-string keys into string keys.
+  stringified_context = {}
+  context.each do |key, value|
+    stringified_context[key.to_s] = value
+  end
+
+  # Make sure every template has access to config.
+  stringified_context['config'] = load_config
+
+  template.render!(stringified_context,  { strict_variables: true })
+end
+
+def write_file(filename, content)
+  File.open("build/#{filename}", 'w+') do |f|
+    f.write content
   end
 end
 
@@ -120,16 +143,39 @@ def load_secrets
   YAML.load(File.read('config/secrets.yml'))
 end
 
-def render_rss(episodes)
-  config  = load_config
-  secrets = load_secrets
+def render_episodes(episodes)
+  # Render each episode and store in a hash with their corresponding episode
+  # numbers
+  rendered_episodes = episodes.inject({}) { |hash, episode|
+    hash[episode.padded_episode_number] = render_template("episode.html", episode: episode)
+    hash
+  }
 
-  template     = Liquid::Template.parse(File.read('templates/rss.xml.liquid'), :error_mode => :strict)
-  output_path  = 'build/rss.xml'
-  output       = template.render('episodes' => episodes, 'config' => config, 'secrets' => secrets)
-  File.open(output_path, 'w+') do |f|
-    f.write output
+  # Render and write the episodes page.
+  content = render_template_in_layout("episodes.html", rendered_episodes: rendered_episodes.values)
+  write_file('episodes.html', content)
+
+  # Make sure the episodes directory exists.
+  FileUtils.mkdir_p('build/episodes')
+
+  # Render each individual episode page.
+  rendered_episodes.each do |episode_number, rendered_episode|
+    content = render_content_in_layout(rendered_episode)
+    write_file("episodes/#{episode_number}.html", content)
   end
+end
+
+def render_index(latest_episode)
+  rendered_episode = render_template("episode.html", episode: latest_episode)
+  content = render_template_in_layout("index.html", rendered_episode: rendered_episode)
+
+  write_file('index.html', content)
+end
+
+def render_rss(episodes)
+  content = render_template("rss.xml", episodes: episodes, secrets: load_secrets)
+
+  write_file('rss.xml', content)
 end
 
 def copy_assets
@@ -138,7 +184,9 @@ def copy_assets
 end
 
 episode_parent_dir = Pathname.new('episodes')
-episodes = load_episodes(episode_parent_dir)
-render_index(episodes)
+episodes = load_episodes(episode_parent_dir).reverse # Newest first.
+
+render_index(episodes.first)
+render_episodes(episodes)
 render_rss(episodes)
 copy_assets
