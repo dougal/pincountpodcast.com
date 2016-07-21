@@ -24,6 +24,6 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Publishing to $server_address..."
-rsync -avz --delete build/ $server_address:$remote_directory/
+rsync -avz --delete --exclude 'audio' build/ $server_address:$remote_directory/
 
 echo "Done!"
