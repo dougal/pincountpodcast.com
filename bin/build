@@ -178,6 +178,24 @@ def render_rss(episodes)
   write_file('rss.xml', content)
 end
 
+def render_pages
+  directory = Pathname.new('pages')
+  paths = directory.entries.select{|path| path.to_s[/\.md$/] }
+
+  paths.each do |path|
+    render_page(directory.join(path))
+  end
+end
+
+def render_page(path)
+  output_filename = "#{path.basename(path.extname)}.html"
+
+  page_content = RDiscount.new(File.read(path)).to_html
+  content      = render_template_in_layout('page.html', content: page_content)
+
+  write_file(output_filename, content)
+end
+
 def copy_assets
   FileUtils.rm_rf('build/assets')
   FileUtils.cp_r('assets', 'build/assets')
@@ -189,4 +207,5 @@ episodes = load_episodes(episode_parent_dir).reverse # Newest first.
 render_index(episodes.first)
 render_episodes(episodes)
 render_rss(episodes)
+render_pages
 copy_assets
