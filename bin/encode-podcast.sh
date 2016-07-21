@@ -21,7 +21,7 @@ INPUT_WAV_FILE=$1
 ARTWORK_JPG_FILENAME="${HOME}/Dropbox/Pincount/mp3Artwork.jpg"
 
 # Output quality (kbps): 96 or 64 recommended
-MP3_KBPS=64
+MP3_KBPS=96
 
 lame --noreplaygain --cbr -h -b $MP3_KBPS --resample 44.1 --tt "$EPISODE_NUMBER: $EPISODE_TITLE" --tc "$EPISODE_SUMMARY" --ta "$SHOW_AUTHOR" --tl "$SHOW_AUTHOR" --ty `date '+%Y'` --ti "$ARTWORK_JPG_FILENAME" --add-id3v2 "$INPUT_WAV_FILE" "${INPUT_WAV_FILE%%.aiff}.mp3"
 
