@@ -450,6 +450,7 @@ hr {
 }
 
 .site-header {
+    position: relative;
     border-bottom: 1px solid #d9d9d9;
     margin-bottom: .75em;
     min-height: 80px
@@ -466,7 +467,6 @@ hr {
 }
 
 .logo {
-    float: left;
     margin: 0 0 1em 0;
     cursor: pointer;
     letter-spacing: 0.8px;
@@ -484,12 +484,20 @@ hr {
 }
 
 .navbar {
-    float: right;
     margin: 0;
     position: relative;
     padding: 0;
     pointer-events: all;
     cursor: pointer
+}
+
+@media screen and (min-width:768px) {
+    .logo {
+        float: left;
+    }
+    .navbar {
+        float: right;
+    }
 }
 
 .navbar li {
