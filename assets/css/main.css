@@ -913,3 +913,6 @@ hr {
     color: #099
 }
 
+audio {
+    width: 100%;
+}
