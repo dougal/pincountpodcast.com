@@ -27,7 +27,7 @@ Episodes are stored in the `episodes/` directory.
 
     $ ./bin/new_episode
 
-Creates a new directory at `episodes/xxxxx` with a Markdown file for metadata at `episodes/xxxxx/xxxxx.md`.
+Creates a new directory at `episodes/x` with a Markdown file for the blog post at `episodes/x/post.md`.
 
 
 Building the Webpages
@@ -40,12 +40,22 @@ Webpages are built from templates and episode metadata files. Build results are 
 This script is run automatically as part of the publish script.
 
 
+Running the Website Locally
+---------------------------
+
+Once the build step has been run, the website can be run locally.
+
+    $ ./bin/server
+
+The website can then be accessed at [http://localhost:8000/](http://localhost:8000/).
+
+
 Syncing Audio Files
 -------------------
 
 Audio files are synced to an S3 bucket, then to the server. In this way audio files do not have to be added to the respository, or stored on a local machine after the inital upload.
 
-Audio files should be placed at episodes/xxxxx/xxxxx.mp3`. The script will warning if they are missing.
+Audio files should be placed at episodes/x/x.mp3`. The script will warn if any files are missing.
 
     $ ./bin/sync_audio_files
 
