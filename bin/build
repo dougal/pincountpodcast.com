@@ -50,19 +50,15 @@ class Episode < Liquid::Drop
   end
 
   def mp3_path
-    "/audio/#{padded_episode_number}.mp3"
+    "/audio/#{number}.mp3"
   end
 
   def episode_path
-    "/episodes/#{padded_episode_number}.html"
+    "/episodes/#{number}.html"
   end
 
   def length_megabytes
     (@length.to_f / 1024**2).ceil
-  end
-
-  def padded_episode_number
-    "%05d" % @number
   end
 end
 
@@ -147,7 +143,7 @@ def render_episodes(episodes)
   # Render each episode and store in a hash with their corresponding episode
   # numbers
   rendered_episodes = episodes.inject({}) { |hash, episode|
-    hash[episode.padded_episode_number] = render_template("episode.html", episode: episode)
+    hash[episode.number] = render_template("episode.html", episode: episode)
     hash
   }
 
@@ -169,7 +165,7 @@ def render_index(episodes)
   # Render each episode and store in a hash with their corresponding episode
   # numbers
   rendered_episodes = episodes.inject({}) { |hash, episode|
-    hash[episode.padded_episode_number] = render_template("episode.html", episode: episode)
+    hash[episode.number] = render_template("episode.html", episode: episode)
     hash
   }
 
