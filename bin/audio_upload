@@ -39,7 +39,7 @@ def configure_s3(config)
 end
 
 def check_episode(number)
-  unless File.exist?("episodes/#{number}/post.md")
+  unless File.exist?("episodes/#{number}/shownotes.md")
     puts "Episode #{number} does not exist."
     exit(1)
   end
@@ -76,7 +76,7 @@ def update_local_metadata(episode_number, mp3_path)
   length   = mp3_path.size
   duration = extract_duration(mp3_path)
 
-  metadata_path = Pathname.new("episodes").join(episode_number, 'post.md')
+  metadata_path = Pathname.new("episodes").join(episode_number, 'shownotes.md')
 
   contents = metadata_path.read
 

@@ -20,6 +20,7 @@ Setup
   2. Edit `config/secrets.yml` as required.
   3. Edit `config/website.yml` as required.
 
+
 Adding a New Episode
 --------------------
 
@@ -27,7 +28,7 @@ Episodes are stored in the `episodes/` directory.
 
     $ ./bin/new_episode
 
-Creates a new directory at `episodes/x` with a Markdown file for the blog post at `episodes/x/post.md`.
+Creates a new directory at `episodes/x` with a Markdown file for the blog post at `episodes/x/shownotes.md`.
 
 
 Building the Webpages
@@ -48,6 +49,14 @@ Once the build step has been run, the website can be run locally.
     $ ./bin/server
 
 The website can then be accessed at [http://localhost:8000/](http://localhost:8000/).
+
+
+Uploading Audio Files
+---------------------
+
+Audio files are uploaded from a local path to an S3 bucket.
+
+    $ ./bin/audio_upload EPISODE_NUMBER MP3_FILE_PATH
 
 
 Syncing Audio Files
