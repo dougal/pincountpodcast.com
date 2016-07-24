@@ -78,11 +78,9 @@ TODO
 ----
 
 * HTTPS (Not letsencrypt due to itunes server issue)
-* Handling of new version of audio file.
 * Consider mtime query arguments on mp3 file URLs.
 * Consider mtime query arguments on asset URLs.
 * .htaccess to remove .html from URLs.
-* Files should have names that are useful when downloaded. 00001.mp3 -> pincount_00001.mp3.
 * Add lastBuildDate to RSS feed. (and other pages?)
 * OG, social stuff, etc. https://github.com/heiswayi/thinkspace/blob/master/_includes/head.html
 * Share buttons

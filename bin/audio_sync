@@ -45,24 +45,25 @@ def sync_file(episode_number, config)
   # TODO: Put filename prefix in config.
   s3_key = "pincount-podcast-#{episode_number}.mp3"
 
-  if !file_on_s3?(s3_key, config)
+  unless source_etag = s3_etag(s3_key, config)
     puts "ERROR: #{s3_key} missing is from S3."
     exit(1)
   end
 
-  # TODO: Handle newer version of file.
-  if !file_on_server?(s3_key, config)
+  if !file_on_server?(s3_key, config) || source_etag != server_md5(s3_key, config)
     copy_s3_to_server(s3_key, config)
   end
 
   puts "#{s3_key} synced"
 end
 
-def file_on_s3?(key, config)
+def s3_etag(key, config)
   s3 = Aws::S3::Client.new
   begin
-    s3.head_object(bucket: config['s3_bucket'], key: key)
-    true
+    metadata = s3.head_object(bucket: config['s3_bucket'], key: key)
+
+    # Remove etag quote wrapping.
+    metadata.etag[1, metadata.etag.length - 2]
   rescue Aws::S3::Errors::NotFound
     false
   end
@@ -73,6 +74,14 @@ def file_on_server?(filename, config)
   output      = `ssh #{config['server']} "ls #{remote_path} 2>/dev/null"`
 
   !!output[/#{remote_path}/]
+end
+
+def server_md5(filename, config)
+  remote_path = "#{config['remote_directory']}/audio/#{filename}"
+  output      = `ssh #{config['server']} "md5sum #{remote_path} 2>/dev/null"`
+
+  # 29cdb488c2dcbdf17d8e2f4aa5a18582  /var/www/pincountpodcast/audio/pincount-podcast-1.mp3
+  output[/^[^\s]+/]
 end
 
 # Copies file from s3 to server by generating a signed URL for the file and
