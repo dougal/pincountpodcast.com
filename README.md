@@ -53,11 +53,9 @@ The website can then be accessed at [http://localhost:8000/](http://localhost:80
 Syncing Audio Files
 -------------------
 
-Audio files are synced to an S3 bucket, then to the server. In this way audio files do not have to be added to the respository, or stored on a local machine after the inital upload.
+Audio files are synced from the upload S3 bucket to the server.
 
-Audio files should be placed at episodes/x/x.mp3`. The script will warn if any files are missing.
-
-    $ ./bin/sync_audio_files
+    $ ./bin/audio_sync
 
 This script is run automatically as part of the publish script.
 
