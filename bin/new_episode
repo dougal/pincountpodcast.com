@@ -21,20 +21,20 @@ episode_parent_dir = Pathname.new('episodes')
 last_episode_entry = episode_parent_dir.entries.last
 
 # Work out what the new episode should be.
-if last_episode_entry.to_s[/^\./] # Is a directory
+if last_episode_entry.to_s[/^\./] # Is a system directory
   episode_number = 1
 else
   episode_number = last_episode_entry.to_s.to_i + 1
 end
 
 # Create a directory.
-episode_path = episode_parent_dir.join(episode_number)
+episode_path = episode_parent_dir.join(episode_number.to_s)
 puts "Creating directory #{episode_path}"
 episode_path.mkdir
 
 # Create a metadata file.
 template     = Liquid::Template.parse(File.read('templates/blank_episode.md.liquid'), :error_mode => :strict)
-output_path  = episode_path.join("#{episode_number}.md")
+output_path  = episode_path.join("post.md")
 episode_date = DateTime.now.iso8601
 guid         = Digest::SHA256.hexdigest "#{episode_date}#{episode_number}"
 

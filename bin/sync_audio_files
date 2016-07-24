@@ -91,7 +91,7 @@ def update_local_metadata(mp3_path)
   length   = mp3_path.size
   duration = extract_duration(mp3_path)
 
-  metadata_path = mp3_path.sub(/mp3$/, 'md')
+  metadata_path = mp3_path.dirname.join('post.md')
 
   contents = metadata_path.read
 

@@ -68,7 +68,7 @@ def load_episodes(episode_parent_dir)
 end
 
 def parse_episode(path)
-  raw = File.read(path.join("#{path.basename}.md"))
+  raw = File.read(path.join('post.md'))
   _, raw_headers, raw_body = raw.split(/^---$/)
 
   headers = parse_headers(raw_headers)
