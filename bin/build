@@ -50,7 +50,7 @@ class Episode < Liquid::Drop
   end
 
   def mp3_path
-    "/audio/#{number}.mp3"
+    "/audio/pincount-podcast-#{number}.mp3"
   end
 
   def episode_path

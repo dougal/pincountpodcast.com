@@ -1,0 +1,98 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+require 'yaml'
+
+def load_gem_lib(lib_name)
+  begin
+    require lib_name
+  rescue LoadError
+    puts "You do not have the `#{lib_name}` gem installed"
+    puts ""
+    puts "Install with: gem install #{lib_name}"
+    puts ""
+    puts "You may be required to use sudo to install"
+    exit(1)
+  end
+end
+
+load_gem_lib('aws-sdk')
+
+def load_config(path)
+  YAML.load(File.read('config/secrets.yml'))
+end
+
+def configure_s3(config)
+  Aws.config.update({
+    region: config['s3_region'],
+    credentials: Aws::Credentials.new(config['s3_key'], config['s3_secret'])
+  })
+end
+
+def sync_files
+  config = load_config('config/secrets.yml')
+  configure_s3(config)
+
+  last_episode_number = Dir.new('episodes').entries.last.to_i
+  episodes_range = 1..last_episode_number
+
+  episodes_range.each do |episode_number|
+    sync_file(episode_number, config)
+  end
+end
+
+def sync_file(episode_number, config)
+  # TODO: Put filename prefix in config.
+  s3_key = "pincount-podcast-#{episode_number}.mp3"
+
+  if !file_on_s3?(s3_key, config)
+    puts "ERROR: #{s3_key} missing is from S3."
+    exit(1)
+  end
+
+  # TODO: Handle newer version of file.
+  if !file_on_server?(s3_key, config)
+    copy_s3_to_server(s3_key, config)
+  end
+
+  puts "#{s3_key} synced"
+end
+
+def file_on_s3?(key, config)
+  s3 = Aws::S3::Client.new
+  begin
+    s3.head_object(bucket: config['s3_bucket'], key: key)
+    true
+  rescue Aws::S3::Errors::NotFound
+    false
+  end
+end
+
+def file_on_server?(filename, config)
+  remote_path = "#{config['remote_directory']}/audio/#{filename}"
+  output      = `ssh #{config['server']} "ls #{remote_path} 2>/dev/null"`
+
+  !!output[/#{remote_path}/]
+end
+
+# Copies file from s3 to server by generating a signed URL for the file and
+# downloading it via cURL on the server.
+def copy_s3_to_server(filename, config)
+  puts "Copying #{filename} from S3 to server..."
+
+  s3     = Aws::S3::Client.new
+  signer = Aws::S3::Presigner.new(client: s3)
+  url = signer.presigned_url(:get_object,
+    { expires_in: 3600,
+      bucket:     config['s3_bucket'],
+      key:        filename,
+      secure:     true
+    }
+  )
+
+  remote_directory = "#{config['remote_directory']}/audio"
+  remote_path = "#{remote_directory}/#{filename}"
+  `ssh #{config['server']} "mkdir -p #{remote_directory} && curl '#{url}' > #{remote_path}"`
+end
+
+sync_files

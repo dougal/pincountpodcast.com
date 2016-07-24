@@ -1,0 +1,101 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+require 'yaml'
+
+def load_gem_lib(lib_name)
+  begin
+    require lib_name
+  rescue LoadError
+    puts "You do not have the `#{lib_name}` gem installed"
+    puts ""
+    puts "Install with: gem install #{lib_name}"
+    puts ""
+    puts "You may be required to use sudo to install"
+    exit(1)
+  end
+end
+
+def check_for_ffprobe
+  if `which ffprobe` == ''
+    puts "FFProbe not available"
+    puts "Please install FFMPEG and try again"
+    exit(1)
+  end
+end
+
+load_gem_lib('aws-sdk')
+check_for_ffprobe
+
+def load_config(path)
+  YAML.load(File.read('config/secrets.yml'))
+end
+
+def configure_s3(config)
+  Aws.config.update({
+    region: config['s3_region'],
+    credentials: Aws::Credentials.new(config['s3_key'], config['s3_secret'])
+  })
+end
+
+def check_episode(number)
+  unless File.exist?("episodes/#{number}/post.md")
+    puts "Episode #{number} does not exist."
+    exit(1)
+  end
+end
+
+def check_file(path)
+  unless path.exist?
+    puts "#{path} does not exist."
+    exit(1)
+  end
+
+  unless path.extname == '.mp3'
+    puts "#{path} is not an MP3."
+    exit(0)
+  end
+end
+
+def upload(episode_number, path)
+  config = load_config('config/secrets.yml')
+  configure_s3(config)
+
+  # TODO: Put filename prefix in config.
+  key = "pincount-podcast-#{episode_number}.mp3"
+
+  puts "Copying #{path} to #{key} on S3..."
+
+  s3 = Aws::S3::Client.new
+  s3.put_object(bucket: config['s3_bucket'], key: key, body: path.open)
+
+  puts "Updating episode metadata..."
+end
+
+def update_local_metadata(episode_number, mp3_path)
+  length   = mp3_path.size
+  duration = extract_duration(mp3_path)
+
+  metadata_path = Pathname.new("episodes").join(episode_number, 'post.md')
+
+  contents = metadata_path.read
+
+  contents.sub!(/^audio_duration:[^\n]*$/, "audio_duration: #{duration}")
+  contents.sub!(/^audio_file_size:[^\n]*$/, "audio_file_size: #{length}")
+
+  metadata_path.open('w+') do |f|
+    f.write contents
+  end
+end
+
+def extract_duration(mp3_path)
+  `ffprobe -i #{mp3_path} 2>&1`[/Duration:\s(\d\d:\d\d:\d\d)/]
+  $1
+end
+
+episode_number = ARGV[0]
+path = Pathname.new(ARGV[1])
+check_episode(episode_number)
+check_file(path)
+upload(episode_number, path)
+update_local_metadata(episode_number, path)
