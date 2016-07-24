@@ -8,7 +8,7 @@ server_address=`config server`
 remote_directory=`config remote_directory`
 
 echo "Running audio sync script..."
-bin/sync_audio_files
+bin/audio_sync
 
 # Exit if audio sync has failed.
 if [ $? -ne 0 ]; then
