@@ -21,7 +21,7 @@ audio_file_size: 25195446
   * [Scale in VR](https://kholdstare.github.io/technical/2013/10/06/sense-of-scale-vr.html)
   * [Lands End](http://www.landsendgame.com) - The game Iain couldn't remember.
 * Video nonsense
-  * [HVEC / H.265](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)
+  * [HEVC / H.265](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)
   * [VP9](https://en.wikipedia.org/wiki/VP9)
   * [Intel E5-1500 V5 CPUs](http://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/xeon-e3-1500-v5-product-brief.pdf) with hardware HVEC encoding.
   * [Qualcomm Snapdragon 800 Series](https://www.qualcomm.com/products/snapdragon/processors/comparison) supports H.265 decoding in hardware.
