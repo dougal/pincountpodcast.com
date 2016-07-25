@@ -14,14 +14,12 @@ audio_file_size: 25195446
   * [Apple WWDC Metal Part 2 Replay](https://developer.apple.com/videos/play/wwdc2016/605/)
   * [Inside-Out Tracking](http://vrguy.blogspot.co.uk/2014/08/positional-tracking-outside-in-vs.html)
   * [How the Vive Lighthouse Works](https://www.youtube.com/watch?v=oqPaaMR4kY4)
-
 * VR
   * [Cortex Episode 32 - Dropping Acid](https://www.relay.fm/cortex/32) - Grey and Myke experience VR for the first time.
   * [CHOO CHOO](https://41.media.tumblr.com/f4bca4406128ea02ac5137faeb207e8a/tumblr_inline_ns9qyfdaYv1tytsbv_540.jpg)
   * [AMD sulon](https://www.youtube.com/watch?v=pp90zGjydwI)
   * [Scale in VR](https://kholdstare.github.io/technical/2013/10/06/sense-of-scale-vr.html)
   * [Lands End](http://www.landsendgame.com) - The game Iain couldn't remember.
-
 * Video nonsense
   * [HVEC / H.265](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)
   * [VP9](https://en.wikipedia.org/wiki/VP9)
