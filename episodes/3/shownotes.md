@@ -1,5 +1,11 @@
 ---
-header stuff to go here
+number: 3
+title: Episode 3 - Silly names
+subtitle: Titan X Pascal, software vs. video encoders, FPGA vs ASICS.
+date: '2016-07-30T08:56:21+01:00'
+guid: f10eb0abca5b000692b88fa0874ca02839f494a2079ca84a972f0b21c117444b
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 ---
 
 * Followup
@@ -17,4 +23,3 @@ header stuff to go here
 * FPGA vs ASICS
   * [ASICS for Tensorflow](https://cloudplatform.googleblog.com/2016/05/Google-supercharges-machine-learning-tasks-with-custom-chip.html)
   * [FPGAs for Robot Arms](http://spectrum.ieee.org/automaton/robotics/robotics-software/custom-processor-speeds-up-robot-motion-planning-by-factor-of-1000)
-  
