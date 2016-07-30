@@ -4,8 +4,8 @@ title: Episode 3 - Silly Names
 subtitle: Titan X Pascal, software vs. video encoders, FPGA vs ASICS.
 date: '2016-07-30T08:56:21+01:00'
 guid: f10eb0abca5b000692b88fa0874ca02839f494a2079ca84a972f0b21c117444b
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:29:43
+audio_file_size: 21498492
 ---
 
 * Followup
