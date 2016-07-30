@@ -89,7 +89,7 @@ def update_local_metadata(episode_number, mp3_path)
 end
 
 def extract_duration(mp3_path)
-  `ffprobe -i #{mp3_path} 2>&1`[/Duration:\s(\d\d:\d\d:\d\d)/]
+  `ffprobe -i "#{mp3_path}" 2>&1`[/Duration:\s(\d\d:\d\d:\d\d)/]
   $1
 end
 
