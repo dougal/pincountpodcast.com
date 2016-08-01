@@ -1,0 +1,11 @@
+---
+number: 4
+title: Episode 4 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2016-08-01T21:31:26+01:00'
+guid: f80a0abd14c9f5dc3cbed2f50d930034f549f37e85da3b0a55f65fe879300820
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
