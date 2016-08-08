@@ -28,4 +28,7 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
     * [Portable PC Case](http://www.theportablepc.com/apolloa1.html)
 * How the Sausage is Made
   * [The PincountPodcast.com source code](https://github.com/dougal/pincountpodcast.com)
-  * [Jekyll Static Web Framework](https://jekyllrb.com)
+  * [Jekyll Static Web Framework](https://jekyllrb.com/)
+  * [No-WWW](http://no-www.org/)
+* Aftershow
+  * [Matlab](http://www.mathworks.com/products/matlab/)
