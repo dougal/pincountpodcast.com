@@ -18,7 +18,7 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 * Facebook Surround 360
   * [Announcement post](https://code.facebook.com/posts/265413023819735)
   * [Project Homepage](https://facebook360.fb.com/facebook-surround-360/)
-  * [Assembly and Harware Guide](https://github.com/facebook/Surround360/raw/master/surround360_design/assembly_guide/Surround360_Manual.pdf)
+  * [Assembly and Hardware Guide](https://github.com/facebook/Surround360/raw/master/surround360_design/assembly_guide/Surround360_Manual.pdf)
   * [Source code](https://github.com/facebook/Surround360)
   * Hardware:
     * [External SAS JBOD array](http://www.areca.com.tw/products/12gsasjbod.htm)
