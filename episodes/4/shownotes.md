@@ -10,11 +10,11 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 
 * Followup
   * [Question from James Burland](https://twitter.com/jamesburland/status/759127404853985280).
-    * [Presence](https://en.wikipedia.org/wiki/Immersion_(virtual_reality))
+    * [Presence](https://en.wikipedia.org/wiki/Immersion_%28virtual_reality%29)
     * [Field of View](https://en.wikipedia.org/wiki/Field_of_view)
     * [Temporal Resolution](https://en.wikipedia.org/wiki/Temporal_resolution)
     * [Spatial Resolution](https://en.wikipedia.org/wiki/Angular_resolution)
-    * [Firma](http://firmagame.com) game for Oculus
+    * [Firma](http://firmagame.com)
 * Facebook Surround 360
   * [Announcement post](https://code.facebook.com/posts/265413023819735)
   * [Project Homepage](https://facebook360.fb.com/facebook-surround-360/)
