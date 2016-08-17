@@ -4,8 +4,8 @@ title: Episode 5 - Glass and Gold Velcro
 subtitle: Display technology, HP's "The Machine", microwaves.
 date: '2016-08-08T21:35:55+01:00'
 guid: 87ed3062a56201956b64a1d452612a8d90e4e53af2904215cefbd353e672d8c6
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:41:16
+audio_file_size: 29818570
 ---
 
 * Displays
