@@ -31,7 +31,7 @@ audio_file_size: 21190044
 * Aftershow - Fun Computer Names
   * [Intertec Superbrain](https://en.wikipedia.org/wiki/Intertec_Superbrain)
   * [HP Superdome](https://en.wikipedia.org/wiki/HP_Superdome)
-  * Meganode
+  * [Meganode](http://www.computermuseum.org.uk/fixed_pages/meganode.html)
   * [Transputer](https://en.wikipedia.org/wiki/Transputer)
   * [Nintendo Super Famicom](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)
   * [Deepcrack - EFF DES Cracker](https://en.wikipedia.org/wiki/EFF_DES_cracker)
