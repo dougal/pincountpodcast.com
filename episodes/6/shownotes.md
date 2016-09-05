@@ -28,3 +28,11 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
   * [Tom's Hardware](http://www.tomshardware.com/news/pcie-4.0-power-speed-express,32525.html)
   * [Benchmarks](http://www.anandtech.com/show/10585/unpacking-amds-zen-benchmark-is-zen-actually-2-faster-than-broadwell)
 * [Hot Chips](http://www.hotchips.org )
+* Aftershow - Fun Computer Names
+  * [Intertec Superbrain](https://en.wikipedia.org/wiki/Intertec_Superbrain)
+  * [HP Superdome](https://en.wikipedia.org/wiki/HP_Superdome)
+  * Meganode
+  * [Transputer](https://en.wikipedia.org/wiki/Transputer)
+  * [Nintendo Super Famicom](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)
+  * [Deepcrack - EFF DES Cracker](https://en.wikipedia.org/wiki/EFF_DES_cracker)
+  * [Gigaring IO Channel - Cray SV1](https://en.wikipedia.org/wiki/Cray_SV1)
