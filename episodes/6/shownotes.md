@@ -4,8 +4,8 @@ title: Episode 6 - Waving their latest and greatest around
 subtitle: Flash Summit, IDF, Hot Chips and silly names
 date: '2016-09-05T17:04:32+01:00'
 guid: b3229c4753246d17a7ffa51605b99b09209d08513eb23d3d2b8ba37ec7af8bd5
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:29:17
+audio_file_size: 21190044
 ---
 * Beeeeeeeeer
 * Flash Week
