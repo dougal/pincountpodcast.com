@@ -14,3 +14,6 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
   * [IP46](https://en.wikipedia.org/wiki/IP_Code)
 * iPhone Camera
 * iPhone CPU
+ * [Wiki on Big.LITTLE](https://en.wikipedia.org/wiki/ARM_big.LITTLE)
+ * [Hexus on big.LITTLE](http://hexus.net/tech/tech-explained/cpu/48693-tech-explained-arm-biglittle-processing/)
+ * [Transistor Counts](https://en.wikipedia.org/wiki/Transistor_count#Microprocessors)
