@@ -11,7 +11,9 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 * Apple Watch Updates
   * [Series 2](http://www.apple.com/apple-watch-series-2/)
 * iPhone Water Resistance
+  * [The Full Specs](http://www.apple.com/iphone-7/specs/)
   * [IP46](https://en.wikipedia.org/wiki/IP_Code)
+  * [Waterproof API in iOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOSSeedAPIDiffs/Objective-C/WatchKit.html)
 * iPhone Camera
 * iPhone CPU
  * [Wiki on Big.LITTLE](https://en.wikipedia.org/wiki/ARM_big.LITTLE)
