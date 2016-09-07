@@ -8,4 +8,7 @@ audio_duration: FILLED_IN_BY_SYNC_COMMAND
 audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 ---
 
-SHOWNOTES_GO_HERE
+ * Apple Watch Updates
+ * iPhone Water Resistance
+ * iPhone Camera
+ * iPhone CPU
