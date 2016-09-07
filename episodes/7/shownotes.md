@@ -8,7 +8,9 @@ audio_duration: FILLED_IN_BY_SYNC_COMMAND
 audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 ---
 
- * Apple Watch Updates
- * iPhone Water Resistance
- * iPhone Camera
- * iPhone CPU
+* Apple Watch Updates
+  * [Series 2](http://www.apple.com/apple-watch-series-2/)
+* iPhone Water Resistance
+  * [IP46](https://en.wikipedia.org/wiki/IP_Code)
+* iPhone Camera
+* iPhone CPU
