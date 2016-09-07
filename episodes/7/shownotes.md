@@ -15,6 +15,7 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
   * [IP46](https://en.wikipedia.org/wiki/IP_Code)
   * [Waterproof API in iOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOSSeedAPIDiffs/Objective-C/WatchKit.html)
 * iPhone Camera
+ * [Disparity Maps](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_calib3d/py_depthmap/py_depthmap.html)
 * iPhone CPU
  * [Wiki on Big.LITTLE](https://en.wikipedia.org/wiki/ARM_big.LITTLE)
  * [Hexus on big.LITTLE](http://hexus.net/tech/tech-explained/cpu/48693-tech-explained-arm-biglittle-processing/)
