@@ -92,4 +92,4 @@ TODO
 * OG, social stuff, etc. https://github.com/heiswayi/thinkspace/blob/master/_includes/head.html
 * Share buttons
 * Twitter card?
-
+* Add a licence. MIT for code, CC for episode shownotes? Font is "DejaVu Fonts License v1.00", layout is also MIT.
