@@ -45,4 +45,11 @@ output_path.open('w+') do |f|
                           'episode_guid' => guid)
 end
 
+puts "Creating new Git branch for episode..."
+`git checkout -b episode-#{episode_number}`
+
+puts "Committing shownotes file..."
+`git add #{output_path}`
+`git commit -m "Adding generated shownotes file for episode #{episode_number}"`
+
 puts "Done."
