@@ -1,6 +1,6 @@
 ---
 number: 6
-title: Episode 6 - Waving their latest and greatest around
+title: Episode 6 - Waving Their Latest and Greatest Around
 subtitle: Flash Summit, IDF, Hot Chips and silly names
 date: '2016-09-05T17:04:32+01:00'
 guid: b3229c4753246d17a7ffa51605b99b09209d08513eb23d3d2b8ba37ec7af8bd5
