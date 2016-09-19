@@ -22,11 +22,11 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
   * [Nine-levels of depth detection](https://www.buzzfeed.com/johnpaczkowski/inside-iphone-7-why-apple-killed-the-headphone-jack)
   * [Remours of Intel modems in iPhone 7](http://www.macrumors.com/2016/06/10/intel-qualcomm-modem-split-iphone-7/)
   * Some Sensor Sums
-    * On a 7+, the wide is 3.99mm /*f*1.8 on 1/3", and the tele a 6.6mm /*f*2.8 on 1/3.2"
+    * On a 7+, the wide is 3.99mm /_f_1.8 on 1/3", and the tele a 6.6mm /*f*2.8 on 1/3.2"
     * Angle of view is *α = 2arctan( d / 2f)*, where *d* is the sensor width.
-      * So decrease *f*, to get the same *α* you need to keep *(d / 2f)* constant, so *d* decreases. 
+      * So decrease *f*, to get the same *α* you need to keep *(d / 2f)* constant, so *d* decreases.
     * Calculate *f* number like: *N = f/D*, where *f* is focal length and *D* aperture diameter.
-      * So double *f* and *2<sup>2</sup>* the area of glass needed. 
+      * So double *f* and *2<sup>2</sup>* the area of glass needed.
       * But *f* isn't doubled on the tele, as the sensor is smaller so doesn't need to double to half the FOV (2x zoom) - see the above point about *α*.
   * [Speculation and deep dive on future ceramic iPhones](https://www.quora.com/What-will-the-iPhone-8-be-made-of/answer/Brian-Roemmele?srid=Pi3)
   * [Nilay Patel's iPhone 7 review on The Verge](http://www.theverge.com/a/apple-iphone-7-review-vs-iphone-7-plus)
