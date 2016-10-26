@@ -11,10 +11,10 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
 - [http://www.bit-tech.net/news/hardware/2016/09/19/amd-am4-pictured/1](http://www.bit-tech.net/news/hardware/2016/09/19/amd-am4-pictured/1) Pincount! 1331 
 - Ifixit - we were wrong, both iPhone 7 sensors the same size 
 - [Good reply on JG acknowledging his lack of knowledge of big.LITTLE ](https://twitter.com/EmperiorEric/status/776955409978589185) 
-- [http://www.anandtech.com/show/10698/samsung-announces-960-pro-and-960-evo-m2-pcie-ssds](http://www.anandtech.com/show/10698/samsung-announces-960-pro-and-960-evo-m2-pcie-ssds) 2tb! 
-- Fpgas in Ms servers [http://www.geekwire.com/2016/microsoft-touts-first-ai-supercomputer-using-programmable-hardware-cloud/](http://www.geekwire.com/2016/microsoft-touts-first-ai-supercomputer-using-programmable-hardware-cloud/) 
+- 2Tb SSDs [http://www.anandtech.com/show/10698/samsung-announces-960-pro-and-960-evo-m2-pcie-ssds](http://www.anandtech.com/show/10698/samsung-announces-960-pro-and-960-evo-m2-pcie-ssds) 2tb! 
+- Fpgas in Microsoft servers [http://www.geekwire.com/2016/microsoft-touts-first-ai-supercomputer-using-programmable-hardware-cloud/](http://www.geekwire.com/2016/microsoft-touts-first-ai-supercomputer-using-programmable-hardware-cloud/) 
 - [http://research.googleblog.com/2016/09/image-compression-with-neural-networks.html](http://research.googleblog.com/2016/09/image-compression-with-neural-networks.html) 
-- 8k 120hz [http://www.anandtech.com/show/10732/ceatic-2016-sharp-showcases-27-inch-8k-120hz-igzo-monitor-with-hdr-also-1000-ppi-for-vr](http://www.anandtech.com/show/10732/ceatic-2016-sharp-showcases-27-inch-8k-120hz-igzo-monitor-with-hdr-also-1000-ppi-for-vr) 
+- 8k 120hz Monitor [http://www.anandtech.com/show/10732/ceatic-2016-sharp-showcases-27-inch-8k-120hz-igzo-monitor-with-hdr-also-1000-ppi-for-vr](http://www.anandtech.com/show/10732/ceatic-2016-sharp-showcases-27-inch-8k-120hz-igzo-monitor-with-hdr-also-1000-ppi-for-vr) 
 - IBM medical imaging displays: [https://en.wikipedia.org/wiki/IBM_T220/T221_LCD_monitors](https://en.wikipedia.org/wiki/IBM_T220/T221_LCD_monitors) (22” 4k, not 17” 2k as Doug guessed) 
 - [I7-7700k “Kaby Lake” Desktop benchmark](http://browser.primatelabs.com/v4/compute/127756) 
 - [https://www.bignerdranch.com/blog/use-tensorflow-and-bnns-to-add-machine-learning-to-your-mac-or-ios-app/](https://www.bignerdranch.com/blog/use-tensorflow-and-bnns-to-add-machine-learning-to-your-mac-or-ios-app/) train on TF run on BNNS 
