@@ -27,3 +27,6 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
     - DGX-1? How mainstream. 
         - Power 8 
         - Bull Sequoa [http://www.bull.com/sites/default/files/docs-dl/f-sequana-en1_web_1.pdf](http://www.facebook.com/l.php?u=http%3A%2F%2Fwww.bull.com%2Fsites%2Fdefault%2Ffiles%2Fdocs-dl%2Ff-sequana-en1_web_1.pdf&h=xAQG-1B8G)
+- Aftershow
+    - [Erlang the movie, WTF](https://www.youtube.com/watch?v=uKfKtXYLG78) 
+    - Iain’s gone the other way, if you know what I mean.
