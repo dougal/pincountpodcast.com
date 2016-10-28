@@ -4,8 +4,8 @@ title: Episode 9 - Serious Beards and Facial Hair
 subtitle: A jumble of news, Iain goes to GTC, and watching Erlang the Movie.
 date: '2016-10-28T17:50:00+01:00'
 guid: a761a72db8f8d0831d8a8fe65abe2ea6b9d8439459bae1c19c1f6c9d6cc20a1f
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:33:28
+audio_file_size: 24199059
 ---
 
 * [AMD AM4 Socket](http://www.bit-tech.net/news/hardware/2016/09/19/amd-am4-pictured/1)
