@@ -1,7 +1,7 @@
 ---
 number: 9
 title: Episode 9 - Serious Beards and Facial Hair
-subtitle: Jumble of news, Iain goes to GTC, and watching Erlang the Movie.
+subtitle: A jumble of news, Iain goes to GTC, and watching Erlang the Movie.
 date: '2016-10-28T17:50:00+01:00'
 guid: a761a72db8f8d0831d8a8fe65abe2ea6b9d8439459bae1c19c1f6c9d6cc20a1f
 audio_duration: FILLED_IN_BY_SYNC_COMMAND
