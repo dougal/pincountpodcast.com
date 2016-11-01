@@ -16,7 +16,7 @@ audio_file_size: 21498492
   * [Mediatek 10 Core SoC x20 Dev Board](http://labs.mediatek.com/site/global/developer_tools/mediatek_android/open_platform/index.gsp)
     * [More info](http://mediatek-helio.com/x20/)
 * [Titan X, Again!](https://blogs.nvidia.com/blog/2016/07/21/titan-x/)
-* [New Intel Chips - Coffeelake](http://wccftech.com/intel-14nm-coffee-lake-10nm-cannonlake-2018/)
+* [New Intel Chips - Coffee Lake](http://wccftech.com/intel-14nm-coffee-lake-10nm-cannonlake-2018/)
 * Are software encoders relevant?
   * [Xeons specifically for video](http://www.anandtech.com/show/10361/intel-announces-xeon-e3-1500-v5-iris-pro-and-edram-for-streaming-video)
   * [Intel VCA board](http://www.intel.com/content/dam/support/us/en/documents/server-products/valleyvista_qsg_h90575001.pdf) (Xeon PCIE boards)
