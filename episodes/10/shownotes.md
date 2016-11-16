@@ -4,8 +4,8 @@ title: Episode 10 - Long on the Internet
 subtitle: Tiny enterprise SSDs, massive upcoming Intel CPUS, and have we reached 'peak laptop'?
 date: '2016-11-16T21:17:37+00:00'
 guid: bcd4379b94e6e69720587866b35fa25db714e647d029eb466d0c6a9735786b59
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:33:10
+audio_file_size: 23984662
 ---
 
 * Followup
