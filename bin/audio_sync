@@ -33,10 +33,9 @@ def sync_files
   config = load_config('config/secrets.yml')
   configure_s3(config)
 
-  last_episode_number = Dir.new('episodes').entries.last.to_i
-  episodes_range = 1..last_episode_number
+  Dir.new('episodes').entries.each do |episode_number|
+    next unless episode_number[/^\d+$/]
 
-  episodes_range.each do |episode_number|
     sync_file(episode_number, config)
   end
 end
