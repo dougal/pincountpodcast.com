@@ -21,7 +21,6 @@ load_gem_lib('liquid')
 load_gem_lib('rdiscount')
 
 class Episode < Liquid::Drop
-
   def initialize(headers, body)
     @body = body
 
@@ -60,11 +59,20 @@ class Episode < Liquid::Drop
   def length_megabytes
     (@length.to_f / 1024**2).ceil
   end
+
+  def <=>(other)
+    @number.to_i <=> other.number.to_i
+  end
 end
 
 def load_episodes(episode_parent_dir)
+  # Grab the directories.
   paths = episode_parent_dir.entries.select{|path| path.to_s[/^\d+$/] }
-  paths.map{|path| parse_episode(episode_parent_dir.join(path))}
+
+  # Parse the episodes.
+  episodes = paths.map{|path| parse_episode(episode_parent_dir.join(path))}
+
+  episodes.sort
 end
 
 def parse_episode(path)
