@@ -15,17 +15,11 @@ rescue LoadError
   exit(1)
 end
 
-episode_parent_dir = Pathname.new('episodes')
-
-# Find the last episode.
-last_episode_entry = episode_parent_dir.entries.last
-
-# Work out what the new episode should be.
-if last_episode_entry.to_s[/^\./] # Is a system directory
-  episode_number = 1
-else
-  episode_number = last_episode_entry.to_s.to_i + 1
-end
+# Get the new episode number.
+episode_parent_dir  = Pathname.new('episodes')
+episodes            = episode_parent_dir.entries.select{|path| path.to_s[/^\d+$/] }
+last_episode_number = episodes.empty? ? 0 : episodes.map{|path| path.to_s.to_i }.sort.last
+episode_number      = last_episode_number + 1
 
 # Create a directory.
 episode_path = episode_parent_dir.join(episode_number.to_s)
