@@ -1,0 +1,11 @@
+---
+number: 12
+title: Episode 12 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2016-12-20T21:19:28+00:00'
+guid: e0a9f7ccf258e5a2e6c4c41939e80461b2e6b8c5cea763d94ec7a7be02bf3da5
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
