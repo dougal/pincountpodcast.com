@@ -2,7 +2,7 @@
 number: 12
 title: Episode 12 - That'd Be a Pretty Small Truck
 subtitle: AMD Deep Learning, various Intel news and trivia, and a whole swathe of new AWS products.
-date: '2016-12-20T21:19:28+00:00'
+date: '2016-12-21T20:05:28+00:00'
 guid: e0a9f7ccf258e5a2e6c4c41939e80461b2e6b8c5cea763d94ec7a7be02bf3da5
 audio_duration: 00:35:46
 audio_file_size: 25857050
