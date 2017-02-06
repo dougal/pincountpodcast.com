@@ -1,0 +1,11 @@
+---
+number: 13
+title: Episode 13 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-02-06T19:14:58+00:00'
+guid: 981090973131fa75ccf0b38b40b8fc9e2a5e6780451fab205aea50bd395d4439
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
