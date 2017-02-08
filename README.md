@@ -1,7 +1,9 @@
 PincountPodcast.com
 ===================
 
-The website for Pincount Podcast
+The website for Pincount Podcast.
+
+A frameworkless (2017 buzzword alert) static site generator which renders Markdown shownotes into Liquid templates.
 
 Requirements
 ------------
