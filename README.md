@@ -84,7 +84,6 @@ Files are transferred via `scp` from the `build/` directory, to the server and d
 TODO
 ----
 
-* Sync for already-synced audio files should do one http request to S3, and one SSH to the server. No more.
 * HTTPS (Not letsencrypt due to itunes server issue)
 * Consider mtime query arguments on mp3 file URLs.
 * Consider mtime query arguments on asset URLs.
