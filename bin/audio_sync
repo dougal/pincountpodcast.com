@@ -33,54 +33,32 @@ def sync_files
   config = load_config('config/secrets.yml')
   configure_s3(config)
 
+  server_files = server_file_md5s(config)
+  s3_files     = s3_file_etags(config)
+
   Dir.new('episodes').entries.each do |episode_number|
     next unless episode_number[/^\d+$/]
 
-    sync_file(episode_number, config)
+    filename = "pincount-podcast-#{episode_number}.mp3"
+
+    sync_file(filename,
+              server_files[filename],
+              s3_files[filename],
+              config)
   end
 end
 
-def sync_file(episode_number, config)
-  # TODO: Put filename prefix in config.
-  s3_key = "pincount-podcast-#{episode_number}.mp3"
-
-  unless source_etag = s3_etag(s3_key, config)
-    puts "ERROR: #{s3_key} missing is from S3."
+def sync_file(filename, server_md5, s3_etag, config)
+  unless s3_etag
+    puts "ERROR: #{filename} missing is from S3."
     exit(1)
   end
 
-  if !file_on_server?(s3_key, config) || source_etag != server_md5(s3_key, config)
-    copy_s3_to_server(s3_key, config)
+  if server_md5 != s3_etag
+    copy_s3_to_server(filename, config)
   end
 
-  puts "#{s3_key} synced"
-end
-
-def s3_etag(key, config)
-  s3 = Aws::S3::Client.new
-  begin
-    metadata = s3.head_object(bucket: config['s3_bucket'], key: key)
-
-    # Remove etag quote wrapping.
-    metadata.etag[1, metadata.etag.length - 2]
-  rescue Aws::S3::Errors::NotFound
-    false
-  end
-end
-
-def file_on_server?(filename, config)
-  remote_path = "#{config['remote_directory']}/audio/#{filename}"
-  output      = `ssh #{config['server']} "ls #{remote_path} 2>/dev/null"`
-
-  !!output[/#{remote_path}/]
-end
-
-def server_md5(filename, config)
-  remote_path = "#{config['remote_directory']}/audio/#{filename}"
-  output      = `ssh #{config['server']} "md5sum #{remote_path} 2>/dev/null"`
-
-  # 29cdb488c2dcbdf17d8e2f4aa5a18582  /var/www/pincountpodcast/audio/pincount-podcast-1.mp3
-  output[/^[^\s]+/]
+  puts "#{filename} synced"
 end
 
 # Copies file from s3 to server by generating a signed URL for the file and
@@ -101,6 +79,41 @@ def copy_s3_to_server(filename, config)
   remote_directory = "#{config['remote_directory']}/audio"
   remote_path = "#{remote_directory}/#{filename}"
   `ssh #{config['server']} "mkdir -p #{remote_directory} && curl '#{url}' > #{remote_path}"`
+end
+
+def server_file_md5s(config)
+  remote_path = "#{config['remote_directory']}/audio/*.mp3"
+  output      = `ssh #{config['server']} "md5sum #{remote_path} 2>/dev/null"`
+
+  server_files = {}
+  md5          = nil
+  path         = nil
+
+  # 29cdb488c2dcbdf17d8e2f4aa5a18582  /var/www/pincountpodcast/audio/pincount-podcast-1.mp3
+  output.each_line do |line|
+    md5, path              = line.split(' ')
+    filename               = File.basename(path)
+    server_files[filename] = md5
+  end
+
+  server_files
+end
+
+def s3_file_etags(config)
+  s3 = Aws::S3::Client.new
+
+  response = s3.list_objects(bucket: config['s3_bucket'])
+
+  s3_files = {}
+  etag     = nil
+  path     = nil
+
+  response.contents.each do |object|
+    # Remove leading and trailing quotes.
+    s3_files[object.key] = object.etag[1,32]
+  end
+
+  s3_files
 end
 
 sync_files
