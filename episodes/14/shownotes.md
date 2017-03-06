@@ -48,7 +48,7 @@ audio_file_size: 26618619
     * [Iain was into Haskell before it was cool](http://www.macs.hw.ac.uk/cs/techreps/docs/files/HW-MACS-TR-0035.pdf)
       * [Hume Programming Language](https://en.m.wikipedia.org/wiki/Hume_%28programming_language%29)
     * [What's wrong with Python 3.X](https://snarky.ca/why-python-3-exists/)
-    * [Python Version usage statistics](https://hynek.me/articles/python3-2016/)
+    * [Python version usage statistics](https://hynek.me/articles/python3-2016/)
 * Aftershow
   * [Munged](https://en.wikipedia.org/wiki/Mung_%29computer_term%29)
   * [#brand](https://marco.org)
