@@ -31,7 +31,7 @@ audio_file_size: 26618619
     * [Twitter thread mentioned](https://twitter.com/joshcarpenter/status/829140973875666944)
   * [Fuzzing PCIe](https://cloudplatform.googleblog.com/2017/02/fuzzing-PCI-Express-security-in-plaintext.html)
     * [Google Cloud Compute GPU Instances](https://cloudplatform.googleblog.com/2016/11/announcing-GPUs-for-Google-Cloud-Platform.html)
-* Main Topic - Things That Still Suck in 2017
+* Things That Still Suck in 2017
   * Collaborative document editing
   * Printers
   * VOIP + conference call etiquette
