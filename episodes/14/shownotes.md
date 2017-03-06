@@ -4,8 +4,8 @@ title: Episode 14 - You've Munged This Whole Thing
 subtitle: Lightning news roundup, and what's still rubbish in 2017
 date: '2017-03-06T19:49:05+00:00'
 guid: fb2e194a47e72fd1acd83075f89396b693657edeedfc103946ca138986531063
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:36:49
+audio_file_size: 26618619
 ---
 
 * Followup
