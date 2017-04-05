@@ -1,7 +1,7 @@
 ---
 number: 15
 title: Episode 15 - What is AI?
-subtitle: Iain goes through a presentation he did regarding the question - What is AI?
+subtitle: A 15th episode special, Iain educates Doug with his views on what is and is not AI.
 date: '2017-04-05T19:46:04+01:00'
 guid: f0c2d319dd3c3dc9c9fa6db92461e94090b99dec7c91622eb7ffb605e6cca804
 audio_duration: FILLED_IN_BY_SYNC_COMMAND
