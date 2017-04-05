@@ -35,3 +35,5 @@ audio_file_size: FILLED_IN_BY_SYNC_COMMAND
   * [ROS + Gazebo](http://gazebosim.org/tutorials?tut=ros_overview)
   * [scikit-learn Python lib](http://scikit-learn.org)
   * [scikit-image Python lib](http://scikit-image.org)
+* Aftershow
+  * [VR-Ready power supply](https://www.reddit.com/r/pcmasterrace/comments/5t86cg/this_is_getting_out_of_hand/)
