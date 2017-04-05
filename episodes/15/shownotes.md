@@ -4,8 +4,8 @@ title: Episode 15 - What is AI?
 subtitle: A 15th episode special, Iain educates Doug with his views on what is and is not AI.
 date: '2017-04-05T19:46:04+01:00'
 guid: f0c2d319dd3c3dc9c9fa6db92461e94090b99dec7c91622eb7ffb605e6cca804
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:39:57
+audio_file_size: 28861289
 ---
 
 * [Modal Logic](https://en.wikipedia.org/wiki/Modal_logic)
