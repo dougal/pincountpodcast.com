@@ -4,8 +4,8 @@ title: Episode 16 - A Flexible Omnishambles
 subtitle: Catching up on the news, and the mysteries of Thunderbolt 3
 date: '2017-05-03T19:09:06+01:00'
 guid: 00033f410ae4aad24769dff6607d1b167b27e499e0634370b123648efd8ae73e
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:33:04
+audio_file_size: 23908448
 ---
 
 * Lyrebird
