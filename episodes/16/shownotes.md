@@ -1,0 +1,11 @@
+---
+number: 16
+title: Episode 16 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-05-03T19:09:06+01:00'
+guid: 00033f410ae4aad24769dff6607d1b167b27e499e0634370b123648efd8ae73e
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
