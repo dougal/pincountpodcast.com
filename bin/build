@@ -172,7 +172,7 @@ end
 def render_index(episodes)
   # Render each episode and store in a hash with their corresponding episode
   # numbers
-  rendered_episodes = episodes.inject({}) { |hash, episode|
+  rendered_episodes = episodes[0,5].inject({}) { |hash, episode|
     hash[episode.number] = render_template("episode.html", episode: episode)
     hash
   }
