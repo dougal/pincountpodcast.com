@@ -222,3 +222,5 @@ render_episodes(episodes)
 render_rss(episodes)
 render_pages
 copy_assets
+
+puts "Finished build."
