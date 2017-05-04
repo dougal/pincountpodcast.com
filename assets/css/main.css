@@ -944,3 +944,22 @@ sub {
 .container-center-content {
     text-align: center;
 }
+
+/* Player */
+
+.player {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+
+    background-color: #f5f5f5;
+    border: solid #ccc;
+    border-width: 1px 0 0 0;
+    padding: 0.75em 1.5em
+}
+
+.player .playPause {
+    width: 6em;
+    text-align: center;
+}
