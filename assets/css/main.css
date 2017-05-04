@@ -963,3 +963,7 @@ sub {
     width: 6em;
     text-align: center;
 }
+
+.player .audio {
+    display: none;
+}
