@@ -91,4 +91,4 @@ var pincountPlayer = (function(){
 
 })()
 
-window.onload = pincountPlayer.init()
+window.onload =  pincountPlayer.init()
