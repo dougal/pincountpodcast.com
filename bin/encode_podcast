@@ -6,7 +6,7 @@
 
 WHICH_LAME=`which lame`
 if [ "$WHICH_LAME" = "" ]; then
-    echo "You do not have the Lame installed"
+    echo "You do not have the Lame MP3 encoder installed"
     echo ""
     echo "With Homebrew on Mac OS X: brew install lame"
     echo ""
