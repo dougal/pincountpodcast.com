@@ -42,6 +42,10 @@ Webpages are built from templates and episode metadata files. Build results are 
 
 This script is run automatically as part of the publish script.
 
+Alternatively to build the app as changes are made, run:
+
+    $ ./bin/watch
+
 
 Running the Website Locally
 ---------------------------

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Watches the source directories and rebuilds the pages when there are any
+# changes.
+# NOTE: Will not rebuild on new files.
+
+WHICH_ENTR=`which entr`
+if [ "$WHICH_ENTR" = "" ]; then
+    echo "You do not have Entr installed"
+    echo ""
+    echo "With Homebrew on Mac OS X: brew install entr"
+    exit 1
+fi
+
+DIRECTORIES="assets config episodes pages templates"
+
+echo "Watching the following directories for changes: $DIRECTORIES"
+
+find $DIRECTORIES | entr ./bin/build
