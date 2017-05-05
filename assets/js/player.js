@@ -54,8 +54,8 @@ var pincountPlayer = (function(){
     // Set the <audio> src.
     audioEl.src = mp3Url
 
-    // Listen for when the audio element is playabale so we can start playing.
-    audioEl.addEventListener('canplaythrough', audioEl.play)
+    // Start the audio playing.
+    audioEl.play()
 
     // Show the player.
     playerEl.className += ' player-active'
