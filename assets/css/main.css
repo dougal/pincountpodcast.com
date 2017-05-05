@@ -971,7 +971,6 @@ sub {
 }
 
 .player .seekControls {
-    /*float: right;*/
     margin-left: 7em;
 }
 
@@ -987,7 +986,7 @@ sub {
 }
 
 .player .progressBar {
-    /*width: 0%;*/
+    width: 0;
     height: 100%;
     display: block;
     background-color: #666;
