@@ -1,6 +1,7 @@
 var pincountPlayer = (function(){
 
   var audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressContEl, progressBarEl
+  var isScrubbing = false
 
   var init = function() {
     // Event listener on play buttons.
@@ -23,6 +24,8 @@ var pincountPlayer = (function(){
     playPauseEl.addEventListener('click', togglePlay, false)
 
     // Event listener for progress bar.
+    progressContainerEl.addEventListener('mousedown', startDrag, false)
+    progressContainerEl.addEventListener('mousemove', dragging, false)
     progressContainerEl.addEventListener('mouseup', seek, false)
 
     // Audio element event listeners.
@@ -55,9 +58,28 @@ var pincountPlayer = (function(){
     audioEl.paused ? audioEl.play() : audioEl.pause()
   }
 
+  var startDrag = function(e) {
+    e.preventDefault()
+
+    isScrubbing = true
+  }
+
+  var dragging = function(e) {
+    e.preventDefault()
+
+    if (!isScrubbing) { return }
+
+    doSeek(e)
+  }
+
   var seek = function(e) {
     e.preventDefault()
 
+    isScrubbing = false
+    doSeek(e)
+  }
+
+  var doSeek = function(e) {
     // Take width from the container, not the target, as target can be the
     // progress bar if seeking backwards.
     var timeToSeekTo = audioEl.duration * e.offsetX / progressContainerEl.getBoundingClientRect().width
