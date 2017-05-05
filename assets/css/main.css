@@ -544,7 +544,11 @@ hr {
     text-transform: uppercase;
     display: inline-block;
     letter-spacing: 1px;
-    font-size: .875rem
+    font-size: .875rem;
+}
+
+.post-title {
+    margin-top: 0;
 }
 
 .pagination li, .pagination a, .pagination span {
@@ -919,11 +923,6 @@ hr {
 .highlight .il {
     color: #099
 }
-
-audio {
-    width: 100%;
-}
-
 
 /* From https://gist.github.com/unruthless/413930 */
 sub, sup {

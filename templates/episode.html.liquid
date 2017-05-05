@@ -6,12 +6,9 @@
   </header>
   <div class="post-content" itemprop="articleBody">
     {{episode.rendered_body}}
-
-    <audio controls src="{{episode.mp3_path}}" preload="metadata"></audio>
-
     <p>
       <a href="{{episode.mp3_path}}" class="downloadLink">Download MP3 ({{episode.length_megabytes}}MB)</a> |
-      <a href="" class="playLink" data-mp3-url="{{ episode.mp3_path }}" data-title="{{ episode.title }}">Play</a>
+      <a href="" class="playLink" data-mp3-url="{{ episode.mp3_path }}" data-title="{{ episode.title }}">Listen now</a>
     </p>
   </div>
 </article>
