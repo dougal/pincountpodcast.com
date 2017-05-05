@@ -1,6 +1,6 @@
 var pincountPlayer = (function(){
 
-  var audioEl, playPauseEl, currentTimeEl, totalTimeEl
+  var audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressBarEl
 
   var init = function() {
     // Event listener on play buttons.
@@ -16,12 +16,13 @@ var pincountPlayer = (function(){
     totalTimeEl   = document.querySelector('.player .totalTime')
     currentTimeEl = document.querySelector('.player .currentTime')
     titleEl       = document.querySelector('.player .title')
+    progressBarEl = document.querySelector('.player .progressBar')
 
     // Event listener for play/pause button.
     playPauseEl.addEventListener('click', togglePlay, false)
 
     // Audio element event listeners.
-    audioEl.addEventListener('loadedmetadata', updateTotalTime)
+    audioEl.addEventListener('loadedmetadata', setTotalTime)
     audioEl.addEventListener('canplaythrough', audioEl.play)
     audioEl.addEventListener('pause', updateUI)
     audioEl.addEventListener('play', updateUI)
@@ -51,16 +52,18 @@ var pincountPlayer = (function(){
   }
 
   var updateUI = function(e) {
+    // Play/Pause button text.
     playPauseEl.innerHTML = audioEl.paused ? 'Play' : 'Pause'
-    updateCurrentTime()
-  }
 
-  var updateTotalTime = function(e) {
-    totalTimeEl.innerHTML = niceTime(audioEl.duration)
-  }
-
-  var updateCurrentTime = function(e) {
+    // Current time.
     currentTimeEl.innerHTML = niceTime(audioEl.currentTime)
+
+    // Seek position.
+    progressBarEl.style.width = (100 * audioEl.currentTime / audioEl.duration) + '%'
+  }
+
+  var setTotalTime = function(e) {
+    totalTimeEl.innerHTML = niceTime(audioEl.duration)
   }
 
   var niceTime = function(totalSeconds) {
