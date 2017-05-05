@@ -40,13 +40,21 @@ var pincountPlayer = (function(){
   var playEpisode = function(e) {
     e.preventDefault()
 
-    // Set the episode title.
+    var mp3Url       = e.target.attributes['data-mp3-url'].value
     var episodeTitle = e.target.attributes['data-title'].value
+
+    // Check the episodes is not already playing.
+    if (audioEl.src.match(mp3Url)) {
+      return
+    }
+
+    // Set the episode title.
     titleEl.innerHTML = episodeTitle
 
     // Set the <audio> src.
-    var mp3Url = e.target.attributes['data-mp3-url'].value
     audioEl.src = mp3Url
+
+    // Listen for when the audio element is playabale so we can start playing.
     audioEl.addEventListener('canplaythrough', audioEl.play)
 
     // Show the player.
