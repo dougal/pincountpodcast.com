@@ -1,6 +1,6 @@
 var pincountPlayer = (function(){
 
-  var audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressBarEl
+  var audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressContEl, progressBarEl
 
   var init = function() {
     // Event listener on play buttons.
@@ -11,15 +11,19 @@ var pincountPlayer = (function(){
     })
 
     // Capture elements in variables for reuse.
-    audioEl       = document.querySelector('.player audio')
-    playPauseEl   = document.querySelector('.player .playPause')
-    totalTimeEl   = document.querySelector('.player .totalTime')
-    currentTimeEl = document.querySelector('.player .currentTime')
-    titleEl       = document.querySelector('.player .title')
-    progressBarEl = document.querySelector('.player .progressBar')
+    audioEl             = document.querySelector('.player audio')
+    playPauseEl         = document.querySelector('.player .playPause')
+    totalTimeEl         = document.querySelector('.player .totalTime')
+    currentTimeEl       = document.querySelector('.player .currentTime')
+    titleEl             = document.querySelector('.player .title')
+    progressContainerEl = document.querySelector('.player .progressContainer')
+    progressBarEl       = document.querySelector('.player .progressBar')
 
     // Event listener for play/pause button.
     playPauseEl.addEventListener('click', togglePlay, false)
+
+    // Event listener for progress bar.
+    progressContainerEl.addEventListener('mouseup', seek, false)
 
     // Audio element event listeners.
     audioEl.addEventListener('loadedmetadata', setTotalTime)
@@ -49,6 +53,16 @@ var pincountPlayer = (function(){
   var togglePlay = function(e){
     e.preventDefault()
     audioEl.paused ? audioEl.play() : audioEl.pause()
+  }
+
+  var seek = function(e) {
+    e.preventDefault()
+
+    // Take width from the container, not the target, as target can be the
+    // progress bar if seeking backwards.
+    var timeToSeekTo = audioEl.duration * e.offsetX / progressContainerEl.getBoundingClientRect().width
+
+    audioEl.currentTime = timeToSeekTo
   }
 
   var updateUI = function(e) {
