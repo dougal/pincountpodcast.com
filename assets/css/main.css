@@ -952,11 +952,16 @@ sub {
     bottom: 0;
     z-index: 1000;
     width: 100%;
+    display: none;
 
     background-color: #f5f5f5;
     border: solid #ccc;
     border-width: 1px 0 0 0;
     padding: 0 1.5em 0.5em 1.5em
+}
+
+.player-active {
+    display: block;
 }
 
 .player .playPause {

@@ -1,6 +1,6 @@
 var pincountPlayer = (function(){
 
-  var audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressContEl, progressBarEl
+  var playerEl, audioEl, playPauseEl, currentTimeEl, totalTimeEl, progressContEl, progressBarEl
   var isScrubbing = false
 
   var init = function() {
@@ -12,6 +12,7 @@ var pincountPlayer = (function(){
     })
 
     // Capture elements in variables for reuse.
+    playerEl            = document.querySelector('.player')
     audioEl             = document.querySelector('.player audio')
     playPauseEl         = document.querySelector('.player .playPause')
     totalTimeEl         = document.querySelector('.player .totalTime')
@@ -47,6 +48,9 @@ var pincountPlayer = (function(){
     var mp3Url = e.target.attributes['data-mp3-url'].value
     audioEl.src = mp3Url
     audioEl.addEventListener('canplaythrough', audioEl.play)
+
+    // Show the player.
+    playerEl.className += ' player-active'
   }
 
   var play = function() {
