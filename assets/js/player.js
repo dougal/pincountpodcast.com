@@ -61,10 +61,6 @@ var pincountPlayer = (function(){
     playerEl.className += ' player-active'
   }
 
-  var play = function() {
-    audioEl.play()
-  }
-
   var togglePlay = function(e){
     e.preventDefault()
     audioEl.paused ? audioEl.play() : audioEl.pause()
