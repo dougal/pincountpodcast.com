@@ -4,8 +4,8 @@ title: Episode 17 - Procount
 subtitle: What is a Pro Computer?
 date: '2017-05-15T18:05:27+01:00'
 guid: d109455e9a4b891797711bf38d9548cca3e3ce00611279918a5f5b40020a4915
-audio_duration: FILLED_IN_BY_SYNC_COMMAND
-audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+audio_duration: 00:29:43
+audio_file_size: 21494005
 ---
 
 * [Mac Pro Lives - Daring Fireball](https://daringfireball.net/2017/04/the_mac_pro_lives)
