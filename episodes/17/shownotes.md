@@ -13,6 +13,6 @@ audio_file_size: 21494005
   * [Dan Luu Tweet](https://twitter.com/danluu/status/670293935592337412)
   * [Why ECC? - Dan Luu](http://danluu.com/why-ecc/)
 * [iMac Pro](https://www.macrumors.com/2017/04/20/intel-basin-falls-may-coffee-lake-august/)
-* [JayzTwoCents on why small time differences in long running tasks doesn't matter](https://www.youtube.com/watch?v=Vf_pUECRmAo&t=302)
+* [JayzTwoCents on why small time differences in long running tasks don't matter](https://www.youtube.com/watch?v=Vf_pUECRmAo&t=302)
 * [Razer Blade](https://www.razerzone.com/gaming-systems/razer-blade)
 * [HP Z620/640 workstation](http://www8.hp.com/us/en/campaigns/workstations/z620.html)
