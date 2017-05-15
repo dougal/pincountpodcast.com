@@ -982,6 +982,7 @@ sub {
     height: 15px;
     border: 1px solid black;
     display: block;
+    cursor: pointer;
 }
 
 .player .progressBar {
