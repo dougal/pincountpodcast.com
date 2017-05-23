@@ -12,7 +12,7 @@ if [ "$WHICH_ENTR" = "" ]; then
     exit 1
 fi
 
-DIRECTORIES="assets config episodes pages templates"
+DIRECTORIES="assets bin config episodes pages templates"
 
 echo "Watching the following directories for changes: $DIRECTORIES"
 
