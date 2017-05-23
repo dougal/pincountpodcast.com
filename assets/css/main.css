@@ -466,7 +466,7 @@ hr {
 }
 
 .logo {
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
     cursor: pointer;
     letter-spacing: 0.8px;
     font-size: 20px;
@@ -490,18 +490,9 @@ hr {
     cursor: pointer
 }
 
-@media screen and (min-width:768px) {
-    .logo {
-        float: left;
-    }
-    .navbar {
-        float: right;
-    }
-}
-
 .navbar li {
     display: inline-block;
-    padding: 0 .6em
+    padding-right: 1.2em;
 }
 
 .post-list {

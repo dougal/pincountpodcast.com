@@ -3,6 +3,8 @@
 require 'date'
 require 'pathname'
 require 'fileutils'
+require 'ostruct'
+require 'json'
 
 def load_gem_lib(lib_name)
   begin
@@ -60,8 +62,31 @@ class Episode < Liquid::Drop
     (@length.to_f / 1024**2).ceil
   end
 
+  def duration_seconds
+    hours, minutes, seconds = self.duration.split(':').map(&:to_i)
+
+    hours * 3600 + minutes * 60 + seconds
+  end
+
   def <=>(other)
     @number.to_i <=> other.number.to_i
+  end
+
+  def to_h(config)
+    {
+      id:             self.guid,
+      url:            "#{config.domain}/#{self.episode_path}",
+      title:          self.title,
+      summary:        self.subtitle,
+      content_html:   self.rendered_body,
+      date_published: @date.iso8601,
+      attachment:     {
+        url:                  "#{config.domain}#{self.mp3_path}",
+        mime_type:            'audio/mpeg',
+        size_in_bytes:        @length.to_i,
+        duration_in_seconds:  self.duration_seconds
+      }
+    }
   end
 end
 
@@ -189,6 +214,25 @@ def render_rss(episodes)
   write_file('rss.xml', content)
 end
 
+def render_json_feed(episodes)
+  path    = 'feed.json'
+  config  = OpenStruct.new(load_config)
+
+  content = {
+    version: 'https://jsonfeed.org/version/1',
+    title:          config.name,
+    description:    config.description,
+    author:         { name: config.authors },
+    icon:           "#{config.domain}/assets/images/pincount_logo_1400x1400.jpg",
+    home_page_url:  config.domain,
+    feed_url:       "#{config.domain}/#{path}",
+  }
+
+  content[:items] = episodes.map { |e| e.to_h(config) }
+
+  write_file(path, JSON.pretty_generate(content))
+end
+
 def render_pages
   directory = Pathname.new('pages')
   paths = directory.entries.select{|path| path.to_s[/\.md$/] }
@@ -220,6 +264,7 @@ episodes = load_episodes(episode_parent_dir).reverse # Newest first.
 render_index(episodes)
 render_episodes(episodes)
 render_rss(episodes)
+render_json_feed(episodes)
 render_pages
 copy_assets
 

@@ -99,3 +99,4 @@ TODO
 * Share buttons
 * Twitter card?
 * Add a licence. MIT for code, CC for episode shownotes? Font is "DejaVu Fonts License v1.00", layout is also MIT.
+* Separate authors in feed.json.
