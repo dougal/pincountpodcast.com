@@ -1,6 +1,6 @@
 ---
 number: 18
-title: Episode 18 - Depressed Grad Student Slash Intern Reading Words Into A Microphone
+title: Episode 18 - Depressed Grad Student Slash Intern
 subtitle: Doug and Iain talk about SIGGRAPH paper preview videos
 date: '2017-06-13T20:19:53+01:00'
 guid: 56380f7754f8f4d039e50efc5249d3b8a594676327a87501f191b7da7af256e1
