@@ -1,0 +1,11 @@
+---
+number: 19
+title: Episode 19 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-07-05T18:59:53+01:00'
+guid: 45e47171fa1de5cbbf37956100ec4e7ae05058f9776d9349080fdc6de0cd9bfb
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
