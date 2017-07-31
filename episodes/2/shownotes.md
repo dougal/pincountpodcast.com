@@ -17,7 +17,7 @@ audio_file_size: 25195446
 * VR
   * [Cortex Episode 32 - Dropping Acid](https://www.relay.fm/cortex/32) - Grey and Myke experience VR for the first time.
   * [CHOO CHOO](https://41.media.tumblr.com/f4bca4406128ea02ac5137faeb207e8a/tumblr_inline_ns9qyfdaYv1tytsbv_540.jpg)
-  * [AMD sulon](https://www.youtube.com/watch?v=pp90zGjydwI)
+  * [AMD Sulon](https://www.youtube.com/watch?v=pp90zGjydwI)
   * [Scale in VR](https://kholdstare.github.io/technical/2013/10/06/sense-of-scale-vr.html)
   * [Lands End](http://www.landsendgame.com) - The game Iain couldn't remember.
 * Video nonsense
