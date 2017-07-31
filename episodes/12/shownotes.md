@@ -12,7 +12,7 @@ audio_file_size: 25857050
   * [Instinct announcement](http://radeon.com/en-us/instinct/)
   * [Anandtech coverage](http://www.anandtech.com/show/10905/amd-announces-radeon-instinct-deep-learning-2017)
   * [Hacker News Discussion](https://news.ycombinator.com/item?id=13159943)
-  * [Linux kernel refusing AMD patche](https://lists.freedesktop.org/archives/dri-devel/2016-December/126516.html)
+  * [Linux kernel refusing AMD patches](https://lists.freedesktop.org/archives/dri-devel/2016-December/126516.html)
 * Intel GPU Internals
   * [Intel gpu design](https://software.intel.com/sites/default/files/managed/89/92/Intel-Graphics-Architecture-ISA-and-microarchitecture.pdf )
   * [Expiring Intel-Nvidia patent cross-licensing to expire in 2017 - Ryan Smith](https://twitter.com/RyanSmithAT/status/806212965129011200)
