@@ -1,0 +1,11 @@
+---
+number: 20
+title: Episode 20 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-08-08T21:31:30+01:00'
+guid: 179edb0563c6117c26afcdfbf95d4ea90ef0845a9b1a97a64bc958b40c09e266
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
