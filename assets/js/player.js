@@ -19,6 +19,7 @@ var pincountPlayer = (function(){
     currentTimeEl       = document.querySelector('.player .currentTime')
     titleEl             = document.querySelector('.player .title')
     progressContainerEl = document.querySelector('.player .progressContainer')
+    loadedBarEl         = document.querySelector('.player .loadedBar')
     progressBarEl       = document.querySelector('.player .progressBar')
 
     // Event listener for play/pause button.
@@ -102,6 +103,9 @@ var pincountPlayer = (function(){
     // Current time.
     currentTimeEl.innerHTML = niceTime(audioEl.currentTime)
 
+    // Loaded position.
+    loadedBarEl.style.width = loadedPercent() + '%'
+
     // Seek position.
     progressBarEl.style.width = (100 * audioEl.currentTime / audioEl.duration) + '%'
   }
@@ -124,6 +128,19 @@ var pincountPlayer = (function(){
     output += zeroPad(minutes) + ':' + zeroPad(seconds)
 
     return output
+  }
+
+  var loadedPercent = function() {
+    // Get the buffered region that includes the current play position.
+    // The end of that region is the time we want.
+    var buffered = audioEl.buffered
+    for(var i=0; i < buffered.length; i++) {
+      if (buffered.start(i) <= audioEl.currentTime && buffered.end(i) >= audioEl.currentTime) {
+        return 100 * buffered.end(i) / audioEl.duration
+      }
+    }
+
+    return 0
   }
 
   var zeroPad = function(number) {

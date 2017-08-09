@@ -976,6 +976,13 @@ sub {
     cursor: pointer;
 }
 
+.player .loadedBar {
+    width: 0;
+    height: 100%;
+    display: block;
+    background-color: #CCC;
+}
+
 .player .progressBar {
     width: 0;
     height: 100%;
