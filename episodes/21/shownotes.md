@@ -1,0 +1,11 @@
+---
+number: 21
+title: Episode 21 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-09-25T19:36:09+01:00'
+guid: 62da11f49ad8489ab220e602f9b016532b40c31242cea910df00e61ae827c568
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
