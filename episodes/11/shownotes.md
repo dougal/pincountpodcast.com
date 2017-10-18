@@ -22,7 +22,7 @@ audio_file_size: 21384055
   * [SteamOS](https://en.wikipedia.org/wiki/SteamOS)
   * [Intel Skull Canyon NUC](http://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc6i7kyk-features-configurations.html)
 * Aftershow
-  * [Screenshot of another of Doug's projects, which has 26,303 dependent files](/images/episodes/11/all-the-javascript-dependencies.png)
+  * [Screenshot of another of Doug's projects, which has 26,303 dependent files](/assets/images/episodes/11/all-the-javascript-dependencies.png)
   * [Yarn Javascript Package Manager](https://code.facebook.com/posts/1840075619545360)
   * [Leftpad package deleted from NPM, chaos ensues](http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)
   * [The left-pad string package](https://www.npmjs.com/package/left-pad)
