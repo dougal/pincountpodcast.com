@@ -1,0 +1,11 @@
+---
+number: 22
+title: Episode 22 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-10-18T18:33:18+01:00'
+guid: 312181a5b99cd26aeed40e7a800c70bd071b657c96f3a6f6ffc2883b5bfbf74f
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
