@@ -2,19 +2,7 @@
 
 require 'pathname'
 require 'yaml'
-
-def load_gem_lib(lib_name)
-  begin
-    require lib_name
-  rescue LoadError
-    puts "You do not have the `#{lib_name}` gem installed"
-    puts ""
-    puts "Install with: gem install #{lib_name}"
-    puts ""
-    puts "You may be required to use sudo to install"
-    exit(1)
-  end
-end
+require 'aws-sdk-s3'
 
 def check_for_ffprobe
   if `which ffprobe` == ''
@@ -24,7 +12,6 @@ def check_for_ffprobe
   end
 end
 
-load_gem_lib('aws-sdk')
 check_for_ffprobe
 
 def load_config(path)

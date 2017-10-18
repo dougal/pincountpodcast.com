@@ -8,19 +8,19 @@ A frameworkless (2017 buzzword alert) static site generator which renders Markdo
 Requirements
 ------------
 
-Some scripts require a working Ruby interpreter. User will be prompted to install required Rubygems if they are not available.
+Some scripts require a working Ruby interpreter. All other scripts are Bash.
 
-All other scripts are Bash.
-
-Audio sync script requires a working install of [FFMPEG](https://ffmpeg.org) so as to determine the episode length.
+See `Brewfile` for other dependencies.
 
 
 Setup
 -----
 
-  1. Run `$ cp config/secrets.yml.example config/secrets.yml`
-  2. Edit `config/secrets.yml` as required.
-  3. Edit `config/website.yml` as required.
+  1. Install Ruby dependencies: `$ bundle install`
+  2. Install other dependencies. On Mac OS: `$ brew tap homebrew/bundle && brew bundle`
+  3. Run `$ cp config/secrets.yml.example config/secrets.yml`
+  4. Edit `config/secrets.yml` as required.
+  5. Edit `config/website.yml` as required.
 
 
 Adding a New Episode

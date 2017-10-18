@@ -4,16 +4,7 @@ require 'date'
 require 'pathname'
 require 'digest'
 
-begin
-  require 'liquid'
-rescue LoadError
-  puts "You do not have the `liquid` gem installed"
-  puts ""
-  puts "Install with: gem install liquid"
-  puts ""
-  puts "You may be required to use sudo to install"
-  exit(1)
-end
+require 'liquid'
 
 # Get the new episode number.
 episode_parent_dir  = Pathname.new('episodes')

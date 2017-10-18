@@ -2,21 +2,7 @@
 
 require 'pathname'
 require 'yaml'
-
-def load_gem_lib(lib_name)
-  begin
-    require lib_name
-  rescue LoadError
-    puts "You do not have the `#{lib_name}` gem installed"
-    puts ""
-    puts "Install with: gem install #{lib_name}"
-    puts ""
-    puts "You may be required to use sudo to install"
-    exit(1)
-  end
-end
-
-load_gem_lib('aws-sdk')
+require 'aws-sdk-s3'
 
 def load_config(path)
   YAML.load(File.read('config/secrets.yml'))
