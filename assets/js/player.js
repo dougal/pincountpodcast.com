@@ -32,7 +32,7 @@ var pincountPlayer = (function(){
 
     // Audio element event listeners.
     audioEl.addEventListener('loadedmetadata', setTotalTime)
-    audioEl.addEventListener('canplaythrough', audioEl.play)
+    audioEl.addEventListener('canplay', audioEl.play)
     audioEl.addEventListener('pause', updateUI)
     audioEl.addEventListener('play', updateUI)
     audioEl.addEventListener('progress', updateUI)
