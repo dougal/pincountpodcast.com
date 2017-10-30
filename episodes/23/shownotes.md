@@ -1,0 +1,11 @@
+---
+number: 23
+title: Episode 23 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-10-30T19:58:14+00:00'
+guid: e84a0d3670dddd01f461d8f5b46858ae0464b608a62f0d1392df8ef2a4292d56
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
