@@ -24,7 +24,7 @@ audio_file_size: 21559614
   * Side rant on Linux notebooks:
     * [PNY PrevailPro P4000](https://www.pny.com/prevail-pro-embedded-p4000)
     * [Razer Blade Stealth with Kaby Lake 15W 4-core](https://www.razerzone.com/gaming-systems/razer-blade-stealth)
-    * [Dell XPS 12 with Kaby Lake 15W 4-core](https://www.theverge.com/circuitbreaker/2017/8/28/16202002/dell-8th-generation-kaby-lake-updates-xps-13-inspiron)
+    * [Dell XPS 13 with Kaby Lake 15W 4-core](https://www.theverge.com/circuitbreaker/2017/8/28/16202002/dell-8th-generation-kaby-lake-updates-xps-13-inspiron)
   * [Image - Facebook's "small" deep learning cluster](/assets/images/episodes/23/facebook-small-dl-cluster.jpg)
   * [Image - RGB Man](/assets/images/episodes/23/rgb-man.jpg)
   * [Video - RGB robot](/assets/images/episodes/23/rgb-robot.mp4)
