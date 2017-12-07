@@ -50,5 +50,5 @@ audio_file_size: 26618619
     * [What's wrong with Python 3.X](https://snarky.ca/why-python-3-exists/)
     * [Python version usage statistics](https://hynek.me/articles/python3-2016/)
 * Aftershow
-  * [Munged](https://en.wikipedia.org/wiki/Mung_%29computer_term%29)
+  * [Munged](https://en.wikipedia.org/wiki/Mung_%28computer_term%29)
   * [#brand](https://marco.org)
