@@ -1,0 +1,11 @@
+---
+number: 24
+title: Episode 24 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2017-12-07T13:02:22+00:00'
+guid: dabed377c4a28f23fb287b3beee2eb75f90808fe0aead983e369cb631b25801e
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
