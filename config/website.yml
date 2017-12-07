@@ -3,7 +3,7 @@ domain:      http://pincountpodcast.com
 name:        Pincount Podcast
 subtitle:    Going deep into the tech with Iain Wallace and Douglas Shearer.
 description: Pincount is a tech podcast not afraid of the details. We're not just users, we're computer scientists and developers. Join us for half an hour each fortnight to get into the detail on new tech and speculate about what might be next.
-intro:       Hi, welcome to Pincount, a podcast hosted by <a href="https://twitter.com/the_accidental">Iain Wallace</a> and <a href="https://twitter.com/douglasfshearer">Douglas Shearer</a>. Pincount is a tech podcast not afraid of the details. We're not just users, we're computer scientists and developers. Join us for half an hour each <strike>week</strike> fortnight to get into the detail on new tech and speculate about what might be next.
+intro:       Hi, welcome to Pincount, a podcast hosted by <a href="https://twitter.com/the_accidental">Iain Wallace</a> and <a href="https://twitter.com/douglasfshearer">Douglas Shearer</a>. Pincount is a tech podcast not afraid of the details. We're not just users, we're computer scientists and developers. Join us for half an hour <strike>each fortnight </strike> somewhat regularly to get into the detail on new tech and speculate about what might be next.
 authors:     Iain Wallace and Douglas Shearer
 keywords:    tech,technology,gadgets,geek,apple,mac,iphone,ipad,ios,development,software,gpu,pc,computer,science
 
