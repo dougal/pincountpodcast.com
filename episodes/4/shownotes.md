@@ -2,7 +2,7 @@
 number: 4
 title: Episode 4 - How the Sausage is Made
 subtitle: Facebook Surround 360, what powers the Pincount website, and who's drinking what.
-date: '2016-08-08T21:31:26+01:00'
+date: '2016-08-01T21:31:26+01:00'
 guid: f80a0abd14c9f5dc3cbed2f50d930034f549f37e85da3b0a55f65fe879300820
 audio_duration: 00:32:56
 audio_file_size: 23810702
