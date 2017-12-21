@@ -26,7 +26,7 @@ audio_file_size: 24118091
     * [Street View panorama processing](https://research.googleblog.com/2017/11/seamless-google-street-view-panoramas.html)
     * [Episode 13 - Google Plus image upscaling discussion](https://pincountpodcast.com/episodes/13.html)
   * [Style Transfer for artistic impression](http://genekogan.com/works/style-transfer/)
-  * [Turning day into night](https://motherboard.vice.com/en_us/article/xwvz9a/watch-an-algorithm-turn-winter-into-summer-in-any-video-image-to-image-translation)
+  * [Turning day into night](https://www.arxiv-vanity.com/papers/1703.07511/)
   * [Interactive editing of a video scene](https://tcwang0509.github.io/pix2pixHD/)
   * [Occlusion removal](https://petapixel.com/2015/08/05/wow-this-algorithm-can-separate-reflections-from-photographs/)
 * Aftershow
