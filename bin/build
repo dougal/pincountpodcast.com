@@ -125,7 +125,7 @@ def render_content_in_layout(content, page_title)
   layout_context[:content]         = content
   layout_context[:head_content]    = render_template("_head.html", page_title: page_title)
   layout_context[:header_content]  = render_template("_header.html")
-  layout_context[:footer_content]  = render_template("_footer.html")
+  layout_context[:footer_content]  = render_template("_footer.html", current_year: Time.now.year)
 
   render_template("layout.html", layout_context)
 end
