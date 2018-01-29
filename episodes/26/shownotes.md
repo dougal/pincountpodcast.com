@@ -1,0 +1,11 @@
+---
+number: 26
+title: Episode 26 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2018-01-29T17:11:54+00:00'
+guid: 7976e5a3409c89fb705fa04969ecb2e69dfc27e2800915e661aebdafd13d9e55
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+SHOWNOTES_GO_HERE
