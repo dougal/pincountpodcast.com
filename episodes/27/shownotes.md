@@ -1,0 +1,12 @@
+---
+number: 27
+title: Episode 27 - TODO_EPISODE_NAME
+subtitle: TODO_EPISODE_SUBTITLE
+date: '2018-03-14T19:10:48+00:00'
+guid: 280bb739e7be62694312995bdb59c728a43362cee2b90cb64c2e742d1cf08a60
+audio_duration: FILLED_IN_BY_SYNC_COMMAND
+audio_file_size: FILLED_IN_BY_SYNC_COMMAND
+---
+
+* Followup
+  * SHOWNOTES_GO_HERE
