@@ -87,6 +87,20 @@ If build fails, or any audio files are missing, publish script will halt without
 Files are transferred via `scp` from the `build/` directory, to the server and directory defined in `config/secrets.yml`.
 
 
+Notes on Markdown
+-----------------
+
+Brackets or other symbols in URLs should be replaced with entities.
+
+For example:
+
+    [Hume Programming Language](https://en.m.wikipedia.org/wiki/Hume_(programming_language)
+
+Should become:
+
+    [Hume Programming Language](https://en.m.wikipedia.org/wiki/Hume_%28programming_language%29)
+
+
 TODO
 ----
 
