@@ -43,3 +43,4 @@ if [ "$WHICH_SAY" != "" ]; then
 fi
 
 echo $MESSAGE
+ffprobe -loglevel error -i ${INPUT_WAV_FILE%%.aiff}.mp3
