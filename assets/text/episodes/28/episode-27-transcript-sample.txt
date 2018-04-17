@@ -1,0 +1,7 @@
+Pincount Podcast Episode 27 Transcript Sample - Using Amazon Transcribe
+
+Speaker 1: Welcome
+Speaker 0: to ben. Can the podcast very good, deep into the tag, i'm digging a shitter. I'm here with my co host, ian wallace
+Speaker 0: high, right?
+Speaker 1: So what we got this week, i think we started some follow up from last episode.
+Speaker 0: Yes, the last episode. We're looking at some benchmarks for the titan v and a few one hundred, and someone had benchmarks with two are benchmarked against each other. We didn't understand some of the results in the v one hundred came out slightly, far starting the titan of you. We didn't understand why, so we both their research. After the short terms i q one hundred extra men, many bandwidth has more federal headroom to play with and a bunch of other small things that make a difference. Yeah.
