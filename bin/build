@@ -24,6 +24,10 @@ class Episode < Liquid::Drop
     @date.strftime("%-d %B %Y")
   end
 
+  def pretty_duration
+    split_duration.reject { |t| t == 0 }.join(':')
+  end
+
   def itunes_date
     # Thu, 14 Jul 2016 12:00:00 GMT
     @date.strftime("%a, %-d %b %Y %H:%M:%S %z")
@@ -50,7 +54,7 @@ class Episode < Liquid::Drop
   end
 
   def duration_seconds
-    hours, minutes, seconds = self.duration.split(':').map(&:to_i)
+    hours, minutes, seconds = split_duration
 
     hours * 3600 + minutes * 60 + seconds
   end
@@ -74,6 +78,12 @@ class Episode < Liquid::Drop
         duration_in_seconds:  self.duration_seconds
       }
     }
+  end
+
+  private
+
+  def split_duration
+    self.duration.split(':').map(&:to_i)
   end
 end
 
