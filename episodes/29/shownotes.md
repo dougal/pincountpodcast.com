@@ -38,11 +38,12 @@ audio_file_size: 28613267
     * [dtrace - Linux, Mac OS, Solaris](https://en.wikipedia.org/wiki/DTrace)
     * [How to Debug Anything by James Golick](https://www.youtube.com/watch?v=VV7b7fs4VI8)
     * [Legally mandated Brendan Gregg Dtrace info](http://www.brendangregg.com/dtrace.html)
-  * Bash tips:
+  * [Bash](https://www.gnu.org/software/bash/) tips:
     * `ctrl-r` for reverse history search.
     * `ctrl-a` to go to the start of a line.
     * `ctrl-e` to go to the end of a line.
     * `rm -rf /` to test your backups.
+  * [Fish Shell](https://fishshell.com)
 * Aftershow
   * [IBM 5 in 5](http://research.ibm.com/5-in-5/)
   * [Crab simulator](https://www.youtube.com/watch?v=RAwlq985iVA)
