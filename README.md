@@ -30,7 +30,7 @@ Episodes are stored in the `episodes/` directory.
 
     $ ./bin/new_episode
 
-Creates a new directory at `episodes/x` with a Markdown file for the shownotes at `episodes/x/shownotes.md`. Creates a new Git branch, `episode-x`, and commits the generated shownotes file to this branch.
+Creates a new directory at `episodes/x` with a Markdown file for the shownotes at `episodes/x/shownotes.md`.
 
 
 Building the Webpages
