@@ -46,7 +46,7 @@ audio_file_size: 25238715
     * [Tesco Computers for Schools Vouchers](https://en.wikipedia.org/wiki/Tesco#Corporate_social_responsibility)
   * [Apple iBook](https://en.wikipedia.org/wiki/IBook)
   * [Iain's cooling "solution"](/assets/images/episodes/31/iains-cooling-solution.jpg)
-  * [HP Jornada](https://en.wikipedia.org/wiki/Jornada_%28PDA%29)
+  * [HP Jornada](https://en.wikipedia.org/wiki/Jornada_(PDA))
     * [Windows Mobile](https://en.wikipedia.org/wiki/Pocket_PC)
   * [Dell Streak](https://en.wikipedia.org/wiki/Dell_Streak)
   * How the computing world was represented in high-school computing.

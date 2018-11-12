@@ -34,5 +34,5 @@ audio_file_size: 25847892
   * [PS/2 port](https://en.wikipedia.org/wiki/PS/2_port)
   * [USB 3.1](https://en.wikipedia.org/wiki/USB_3.0#USB_3.1)
   * [USB 3.2](https://en.wikipedia.org/wiki/USB_3.0#USB_3.2)
-  * [Qi wireless charging](https://en.wikipedia.org/wiki/Qi_%28standard%29)
+  * [Qi wireless charging](https://en.wikipedia.org/wiki/Qi_(standard))
   * [Wireless USB](https://en.wikipedia.org/wiki/Wireless_USB)

@@ -36,7 +36,7 @@ audio_file_size: 22728025
   * [Pinboard](https://pinboard.in)
   * [Maciej Cegłowski](https://en.wikipedia.org/wiki/Maciej_Cegłowski)
   * [Delicious](https://del.icio.us)
-    * [Delicious on Wikipedia](https://en.wikipedia.org/wiki/Delicious_%28website%29)
+    * [Delicious on Wikipedia](https://en.wikipedia.org/wiki/Delicious_(website))
   * [Pinboard Acquires Delicious](https://blog.pinboard.in/2017/06/pinboard_acquires_delicious/)
   * [Tweet - Delicious Architecture](https://twitter.com/Pinboard/status/875043479033749504)
   * [Tweet - The Cloud Bill](https://twitter.com/Pinboard/status/875044344188649472)

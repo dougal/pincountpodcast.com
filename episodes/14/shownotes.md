@@ -46,9 +46,9 @@ audio_file_size: 26618619
     * [AMD Opteron 'Jaguar' Microarchitecture (2013)](https://en.wikipedia.org/wiki/Opteron#Opteron_X_.2828_nm_bulk.29_-_Jaguar_microarchitecture)
   * [What Programming Languages Are Used Most on Weekends?](http://stackoverflow.blog/2017/02/What-Programming-Languages-Weekends/)
     * [Iain was into Haskell before it was cool](http://www.macs.hw.ac.uk/cs/techreps/docs/files/HW-MACS-TR-0035.pdf)
-      * [Hume Programming Language](https://en.m.wikipedia.org/wiki/Hume_%28programming_language%29)
+      * [Hume Programming Language](https://en.m.wikipedia.org/wiki/Hume_(programming_language))
     * [What's wrong with Python 3.X](https://snarky.ca/why-python-3-exists/)
     * [Python version usage statistics](https://hynek.me/articles/python3-2016/)
 * Aftershow
-  * [Munged](https://en.wikipedia.org/wiki/Mung_%28computer_term%29)
+  * [Munged](https://en.wikipedia.org/wiki/Mung_(computer_term))
   * [#brand](https://marco.org)

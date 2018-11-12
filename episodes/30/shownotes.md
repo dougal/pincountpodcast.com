@@ -19,7 +19,7 @@ audio_file_size: 20185584
     * [Episode 29](https://pincountpodcast.com/episodes/29.html)
     * [2018 Macbook Pro - Macrumors](https://www.macrumors.com/2018/07/12/apple-launches-2018-macbook-pro-lineup/)
 * Backups
-  * [Apple Time Machine](https://en.wikipedia.org/wiki/Time_Machine_%28macOS%29)
+  * [Apple Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS))
   * [SuperDuper!](https://www.shirt-pocket.com/SuperDuper)
   * [RAID is not a backup](https://www.pugetsystems.com/labs/articles/Why-RAID-is-usually-a-Terrible-Idea-29/)
   * [ZFS](https://en.wikipedia.org/wiki/ZFS)
