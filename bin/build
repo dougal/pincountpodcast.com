@@ -7,7 +7,7 @@ require 'ostruct'
 require 'json'
 
 require 'liquid'
-require 'rdiscount'
+require 'kramdown'
 
 class Episode < Liquid::Drop
   def initialize(headers, body)
@@ -34,7 +34,7 @@ class Episode < Liquid::Drop
   end
 
   def rendered_body
-    RDiscount.new(@body).to_html
+    Kramdown::Document.new(@body).to_html
   end
 
   def to_liquid
@@ -243,7 +243,7 @@ def render_page(path)
   basename        = path.basename(path.extname).to_s
   output_filename = "#{basename}.html"
 
-  page_content = RDiscount.new(File.read(path)).to_html
+  page_content = Kramdown::Document.new(File.read(path)).to_html
   page_title   = basename.gsub(/[_-]/, ' ').split(' ').map(&:capitalize).join(' ')
   content      = render_template_in_layout('page.html', page_title, content: page_content)
 

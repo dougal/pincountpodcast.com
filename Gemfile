@@ -2,5 +2,5 @@
 source "https://rubygems.org"
 
 gem 'liquid'
-gem 'rdiscount'
+gem 'kramdown'
 gem 'aws-sdk-s3'
