@@ -13,7 +13,7 @@ audio_file_size: 22728025
 * AI
   * [Funding for AI in UK Autumn 2017 Budget](https://techcrunch.com/2017/11/22/uk-budget-courts-tech-sector-with-663m-in-investments-in-ai-5g-networks-and-more/)
   * [TensorFlow Lite Announcement](https://developers.googleblog.com/2017/11/announcing-tensorflow-lite.html)
-  * [Apple paper on LIDAR point cloud detection](https://www.arxiv-vanity.com/papers/1711.06396/1711.06396)
+  * [Apple paper on LIDAR point cloud detection](https://www.arxiv-vanity.com/papers/1711.06396)
   * [Amazon EC2 P3 instances with Nvidia Tesla V100](https://aws.amazon.com/blogs/aws/new-amazon-ec2-instances-with-up-to-8-nvidia-tesla-v100-gpus-p3/)
     * [Amazon EC2 Deep Learning machine image](https://aws.amazon.com/blogs/ai/announcing-new-aws-deep-learning-ami-for-amazon-ec2-p3-instances/)
 * CPU
