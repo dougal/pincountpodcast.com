@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function config {
-  grep $1 config/secrets.yml | awk '{print $2}'
+  grep $1 config/secrets.yml | awk "{print $2}"
 }
 
 server_address=`config server`
