@@ -25,7 +25,17 @@ class Episode < Liquid::Drop
   end
 
   def pretty_duration
-    split_duration.reject { |t| t == 0 }.join(':')
+    hours, minutes, seconds = split_duration
+
+    if hours > 0
+      "#{hours}:#{double_digit(minutes)}:#{double_digit(seconds)}"
+    else
+      "#{minutes}:#{double_digit(seconds)}"
+    end
+  end
+
+  def double_digit(number)
+    "%02d" % number
   end
 
   def itunes_date
