@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 function config {
   grep $1 config/secrets.yml | awk "{print $2}"
@@ -10,18 +10,8 @@ remote_directory=`config remote_directory`
 echo "Running audio sync script..."
 bin/audio_sync
 
-# Exit if audio sync has failed.
-if [ $? -ne 0 ]; then
-  exit 1
-fi
-
 echo "Running build script..."
 bin/build
-
-# Exit if build has failed.
-if [ $? -ne 0 ]; then
-  exit 1
-fi
 
 echo "Publishing to $server_address..."
 rsync -avz --delete --exclude 'audio' build/ $server_address:$remote_directory/
