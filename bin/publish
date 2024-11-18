@@ -1,11 +1,11 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 function config {
-  grep $1 config/secrets.yml | awk "{print $2}"
+  grep "$1" config/secrets.yml | awk '{print $2}'
 }
 
-server_address=`config server`
-remote_directory=`config remote_directory`
+server_address=$(config server)
+remote_directory=$(config remote_directory)
 
 echo "Running audio sync script..."
 bin/audio_sync
@@ -14,6 +14,6 @@ echo "Running build script..."
 bin/build
 
 echo "Publishing to $server_address..."
-rsync -avz --delete --exclude 'audio' build/ $server_address:$remote_directory/
+rsync -avz --delete --exclude 'audio' build/ "$server_address:$remote_directory"
 
 echo "Done!"
