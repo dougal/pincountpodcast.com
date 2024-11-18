@@ -1,19 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
 # Serves content from the build directory. Audio files, if placed in
-# `build/audio` are served properly by RangeHTTPServer, whereas
-# SimpleHTTPServer does not support range requests.
+# `build/audio` are served using range requests.
 
-# Check to see if the Python module RangeHTTPServer is installed.
-SERVER_INSTALLED=`pip search rangehttpserver | grep INSTALLED`
-if [ "$SERVER_INSTALLED" = "" ]; then
-    echo "You do not have the RangeHTTPServer installed"
-    echo ""
-    echo "Install with: pip install RangeHTTPServer"
-    echo ""
-    echo "You may be required to use sudo to install"
-    exit 1
-fi
+require 'webrick'
 
-cd build
-python -m RangeHTTPServer
+# Create server
+server = WEBrick::HTTPServer.new(
+  Port: 8000,
+  DocumentRoot: "build"
+)
+
+# Trap signals for clean shutdown
+trap('INT') { server.shutdown }
+trap('TERM') { server.shutdown }
+
+# Log startup
+puts "Starting server on http://localhost:8000"
+puts "Serving directory: build/"
+puts "Press Ctrl+C to stop"
+
+# Start server
+server.start
