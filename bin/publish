@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 function config {
   grep "$1" config/secrets.yml | awk '{print $2}'
