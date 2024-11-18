@@ -22,6 +22,7 @@ GEM
       rexml (>= 3.3.9)
     liquid (5.5.1)
     rexml (3.3.9)
+    webrick (1.9.0)
 
 PLATFORMS
   ruby
@@ -30,6 +31,7 @@ DEPENDENCIES
   aws-sdk-s3
   kramdown
   liquid
+  webrick (~> 1.9)
 
 BUNDLED WITH
-   2.3.22
+   2.5.23
