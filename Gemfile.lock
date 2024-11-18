@@ -20,7 +20,7 @@ GEM
     jmespath (1.6.2)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
-    liquid (4.0.1)
+    liquid (5.5.1)
     rexml (3.3.9)
 
 PLATFORMS
