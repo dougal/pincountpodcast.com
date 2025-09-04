@@ -586,6 +586,32 @@ hr {
     display: block
 }
 
+.announcement-banner {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 0.375rem;
+    margin-bottom: 2em;
+    padding: 1em 0;
+}
+
+.announcement-banner .banner-text {
+    color: #856404;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .announcement-banner {
+        margin-bottom: 1.5em;
+    }
+ 
+    .announcement-banner .banner-text {
+        font-size: 1rem;
+    }
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
