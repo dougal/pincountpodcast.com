@@ -10,8 +10,7 @@ end
 
 def configure_s3(config)
   Aws.config.update({
-    region: config['s3_region'],
-    credentials: Aws::Credentials.new(config['s3_key'], config['s3_secret'])
+    region: config['s3_region']
   })
 end
 

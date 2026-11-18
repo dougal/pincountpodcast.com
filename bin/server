@@ -9,7 +9,7 @@ require 'webrick'
 server = WEBrick::HTTPServer.new(
   Port: 8000,
   DocumentRoot: "build"
-)
+
 
 # Trap signals for clean shutdown
 trap('INT') { server.shutdown }

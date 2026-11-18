@@ -20,7 +20,8 @@ Setup
   2. Install other dependencies. On Mac OS: `$ brew tap homebrew/bundle && brew bundle`
   3. Run `$ cp config/secrets.yml.example config/secrets.yml`
   4. Edit `config/secrets.yml` as required.
-  5. Edit `config/website.yml` as required.
+  5. Have an AWS profile available to use.
+  6. Edit `config/website.yml` as required.
 
 
 Adding a New Episode
