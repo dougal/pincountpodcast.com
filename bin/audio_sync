@@ -90,12 +90,9 @@ def s3_file_etags(config)
   response = s3.list_objects(bucket: config['s3_bucket'])
 
   s3_files = {}
-  etag     = nil
-  path     = nil
 
   response.contents.each do |object|
-    # Remove leading and trailing quotes.
-    s3_files[object.key] = object.etag[1,32]
+    s3_files[object.key] = object.etag.delete('"')
   end
 
   s3_files
